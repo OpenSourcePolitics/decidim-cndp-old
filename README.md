@@ -1,3 +1,7 @@
+This repo is based on the 0.7 stable of [Decidim](https://github.com/decidim/decidim). You can see modification history in the commit stream :
+- [Proposal form description field character limit was upgraded to 6000 instead of 500](https://github.com/OpenSourcePolitics/decidim-cndp/commit/32797971d1136fecd303b9bc019bea0033201f27)
+- [Proposal form validation rule concerning puntuation was commented](https://github.com/OpenSourcePolitics/decidim-cndp/commit/d71a2a5f806d8c0c3e7b4d9e90a4a02f59f29b50)
+
 <img src="https://cdn.rawgit.com/decidim/decidim/master/logo.svg" alt="Decidim Logo" width="400">
 
 The participatory democracy framework.
