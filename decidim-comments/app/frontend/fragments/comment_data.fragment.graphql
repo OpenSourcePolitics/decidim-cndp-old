@@ -1,0 +1,23 @@
+#import "../fragments/up_vote_button.fragment.graphql"
+#import "../fragments/down_vote_button.fragment.graphql"
+
+fragment CommentData on Comment {
+  id
+  sgid
+  type
+  body
+  createdAt
+  author {
+    name
+    avatarUrl
+    isVerified
+    isUser
+    deleted
+  }
+  hasComments
+  acceptsNewComments
+  alignment
+  alreadyReported
+  ...UpVoteButton
+  ...DownVoteButton
+}

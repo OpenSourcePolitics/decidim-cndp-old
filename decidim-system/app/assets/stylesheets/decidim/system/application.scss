@@ -1,0 +1,13 @@
+@import "foundation_and_overrides";
+@import "layout";
+@import "login";
+@import "sidebar";
+@import "tables";
+@import "actions";
+
+@import "decidim/editor";
+@import "decidim/utils/fontface";
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}

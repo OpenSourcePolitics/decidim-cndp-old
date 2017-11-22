@@ -1,0 +1,23 @@
+<%=  decidim_form_for(@form) do |f| %>
+  <div class="field">
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :host %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :secondary_hosts %>
+    <p class="help-text"><%= t(".secondary_hosts_hint") %></p>
+  </div>
+
+  <div class="field">
+    <%= f.label :available_authorizations %>
+    <%= f.collection_check_boxes :available_authorizations, Decidim.authorization_handlers, :itself, :itself %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t("decidim.system.actions.save") %>
+  </div>
+<% end %>

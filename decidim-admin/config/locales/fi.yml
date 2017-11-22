@@ -1,0 +1,468 @@
+fi:
+  activemodel:
+    attributes:
+      attachment:
+        description: Kuvaus
+        file: Tiedosto
+        title: Otsikko
+      category:
+        description: Kuvaus
+        name: Nimi
+        parent_id: Yläaihepiiri
+      feature:
+        name: Nimi
+        weight: Painoarvo
+      newsletter:
+        body: Runko
+        subject: Otsikko
+      organization:
+        default_locale: Oletuskieli
+        name: Nimi
+        reference_prefix: Viitteen etuliite
+      organization_appearance:
+        cta_button_path: Call To Action -painikkeen polku
+        cta_button_text: Call To Action -painikkeen teksti
+        description: Kuvaus
+        favicon: Ikoni
+        header_snippets: Yläosiot
+        homepage_image: Kotisivun kuva
+        logo: Logo
+        official_img_footer: Virallinen alapalkin logo
+        official_img_header: Virallinen yläpalkin logo
+        official_url: Virallinen organisaation URL-osoite
+        show_statistics: Näytä tilastot
+        welcome_text: Tervetuloa-teksti
+      scope:
+        code: Koodi
+        name: Nimi
+        organization: Organisaatio
+        scope_type: Kontekstin tyyppi
+      scope_type:
+        name: Nimi
+        organization: Organisaatio
+        plural: Monikko
+      static_page:
+        content: Sisältö
+        organization: Organisaatio
+        slug: URL-tunniste
+        title: Otsikko
+  activerecord:
+    attributes:
+      decidim/participatory_process:
+        banner_image: Bannerikuva
+        description: Kuvaus
+        developer_group: Kehitysryhmä
+        domain: Toimintaympäristö
+        end_date: Lopetusaika
+        hashtag: Hashtag
+        hero_image: Etusivun kuva
+        local_area: Paikallisalue
+        meta_scope: Kontekstin metatiedot
+        participatory_scope: Osallistumisprosessi
+        participatory_structure: Osallistumisprosessin rakenne
+        promoted: Korostettu
+        scope: Konteksti
+        short_description: Lyhyt kuvaus
+        slug: URL-tunniste
+        start_date: Aloitusaika
+        subtitle: Alaotsikko
+        target: Kohde
+        title: Otsikko
+      decidim/participatory_process_group:
+        description: Kuvaus
+        hero_image: Etusivun kuva
+        name: Nimi
+        participatory_processes: Osallistumisprosessit
+      decidim/participatory_process_step:
+        end_date: Päättymisaika
+        start_date: Aloitusaika
+      decidim/static_page:
+        content: Sisältö
+        slug: URL-tunniste
+        title: Otsikko
+  date:
+    formats:
+      datepicker: "%d. %m. %Y"
+  decidim:
+    admin:
+      actions:
+        add: Lisää
+        browse: Selaa
+        export: Vie
+        manage: Hallitse
+        permissions: Oikeudet
+        reject: Hylkää
+        verify: Vahvista
+      attachments:
+        create:
+          error: Uuden liitteen luonnissa tapahtui virhe.
+          success: Liite luotu onnistuneesti.
+        destroy:
+          success: Liite tuhottu onnistuneesti.
+        edit:
+          title: Muokkaa liitettä
+          update: Päivitä
+        index:
+          attachments_title: Liitteet
+        new:
+          create: Luo liite
+          title: Uusi liite
+        update:
+          error: Tämän liitteen päivityksessä tapahtui virhe.
+          success: Liite luotu onnistuneesti.
+      categories:
+        create:
+          error: Tämän aihepiirin luonnissa tapahtui virhe.
+          success: Aihepiiri luotu onnistuneesti.
+        destroy:
+          error: Tämän aihepiirin poistamisessa tapahtui virhe. Poista ensin kaikki sen ala-aihepiirit ja varmista, että mikään muu kooknaisuus ei liity tähän aihepiiriin. Kokeile sen jälkeen uudestaan.
+          success: Aihepiiri poistettu onnistuneesti.
+        edit:
+          title: Muokkaa aihepiiriä
+          update: Päivitä
+        index:
+          categories_title: Aihepiirit
+          category_used: Tätä aihepiiriä ei voida poistaa, koska se on käytössä.
+        new:
+          create: Luo aihepiiri
+          title: Uusi aihepiiri
+        update:
+          error: Tämän aihepiirin luonnissa tapahtui virhe.
+          success: Aihepiiri päivitetty onnistuneesti.
+      dashboard:
+        show:
+          welcome: Tervetuloa Decidimin uuteen hallintapaneeliin.
+      exports:
+        export_as: "%{name} muodossa %{export_format}"
+        notice: Tietojen vienti on käynnissä. Saat sähköpostiviestin, kun se valmistuu.
+      feature_permissions:
+        edit:
+          everyone: Kaikki
+          submit: Tallenna oikeudet
+          title: Muokkaa oikeuksia
+        update:
+          success: Oikeudet päivitetty onnistuneesti.
+      features:
+        create:
+          error: Tämän ominaisuuden luonnissa tapahtui virhe.
+          success: Ominaisuus luotu onnistuneesti.
+        destroy:
+          error: Tämän ominaisuuden tuhoamisessa tapahtui virhe.
+          success: Ominaisuus poistettu onnistuneesti.
+        edit:
+          title: Muokkaa ominaisuutta
+          update: Päivitä
+        form:
+          default_step_settings: Oletusvaiheen asetukset
+          global_settings: Globaalit asetukset
+          step_settings: Vaiheen asetukset
+        index:
+          add: Lisää ominaisuus
+          headers:
+            actions: Toiminnot
+            name: Ominaisuuden nimi
+            type: Ominaisuuden tyyppi
+        new:
+          add: Lisää ominaisuus
+          title: 'Lisää ominaisuus: %{name}'
+        publish:
+          success: Tämä ominaisuus on onnistuneesti julkaistu.
+        title: Ominaisuudet
+        unpublish:
+          success: Tämän ominaisuuden julkaisu on onnistuneesti peruttu.
+        update:
+          error: Tämän ominaisuuden päivityksessä tapahtui virhe.
+          success: Ominaisuus päivitetty onnistuneesti.
+      managed_users:
+        close_session:
+          error: Toisena käyttäjänä esiintymisen istunnon sulkemisessa tapahtui virhe.
+          success: Toisena käyttäjänä esiintymisen istunto on onnistuneesti päätetty.
+        create:
+          error: Hallitun käyttäjän luonnissa tapahtui virhe.
+          success: Hallittu käyttäjä on luotu onnistuneesti.
+        form:
+          name: Nimi
+        impersonate:
+          error: Hallittuna käyttäjänä esiintymisessä tapahtui virhe.
+        impersonations:
+          new:
+            impersonate: Esiinny käyttäjänä
+            new_managed_user_impersonation: Uusi hallittuna käyttäjänä esiintyminen
+        index:
+          impersonate: Esiinny käyttäjänä
+          needs_authoriation_warning: Tällä organisaatiolla tulee olla vähintään yksi tunnistautumisväylä käytössä.
+          promote: Korota oikeudet
+          view_logs: Näytä lokitiedot
+        new:
+          create: Luo
+          new_managed_user: Uusi hallittu käyttäjä
+          select_authorization_method: Valitse tunnistautumistapa
+          step: Vaihe %{current} / %{total}
+        promotion:
+          error: Hallitun käyttäjän oikeuksien korotuksessa tapahtui virhe.
+          success: Hallitun käyttäjän taso on onnistuneesti korotettu.
+        promotions:
+          new:
+            explanation: Hallituille käyttäjille voidaan myöntää normaalien käyttäjien oikeudet. Tämä tarkoittaa, että heille lähetetään kutsu hakemusprosessiin ja tämän jälkeen kyseisinä tileinä ei voi enää esiintyä. Kutsutulle käyttäjälle lähetetään sähköposti, jonka avulla hän voi hyväksyä kutsusi.
+            new_managed_user_promotion: Uusi käyttäjätason korotus hallinnoidulle käyttäjälle
+            promote: Korota oikeudet
+      menu:
+        admins: Ylläpitäjät
+        appearance: Ulkomuoto
+        configuration: kokoonpano
+        dashboard: Hallintapaneeli
+        managed_users: Hallinnoitavat käyttäjät
+        newsletters: Uutiskirjeet
+        scope_types: Kontekstityypit
+        scopes: Kontekstit
+        settings: Asetukset
+        static_pages: Sivut
+        user_groups: Käyttäjäryhmät
+        users: Käyttäjät
+      models:
+        attachment:
+          fields:
+            content_type: Tyyppi
+            title: Otsikko
+          name: Liite
+        category:
+          name: Aihepiiri
+        impersonation_log:
+          fields:
+            admin: Ylläpitäjä
+            ended_at: Päättynyt
+            expired_at: Vanhentunut
+            started_at: Aloitettu
+            user: Käyttäjä
+        managed_user:
+          name: Hallittu käyttäjä
+        newsletter:
+          fields:
+            created_at: Luonnin ajankohta
+            progress: Edistyminen
+            sent_at: Lähetyksen ajankohta
+            subject: Otsikko
+          name: Uutiskirje
+        scope:
+          fields:
+            name: Nimi
+            scope_type: Kontekstin tyyppi
+        scope_type:
+          fields:
+            name: Nimi
+            plural: Monikko
+        static_page:
+          fields:
+            created_at: Luonnin ajankohta
+            title: Otsikko
+        user:
+          fields:
+            created_at: Luontipäivämäärä
+            email: Sähköposti
+            last_sign_in_at: Viimeisen kirjautumisen päivämäärä
+            name: Nimi
+            role: Rooli
+            roles:
+              admin: Ylläpitäjä
+              user_manager: Käyttäjien hallinnoija
+          name: Käyttäjä
+        user_group:
+          fields:
+            actions: Toiminnot
+            created_at: Luonnin ajankohta
+            document_number: Dokumentin numero
+            name: Nimi
+            phone: Puhelinnumero
+            state: Tila
+            users_count: Käyttäjämäärä
+      moderations:
+        index:
+          title: Moderoinnit
+        report:
+          reasons:
+            does_not_belong: Ei kuulu
+            offensive: Loukkaava
+            spam: Roskaposti
+      newsletters:
+        create:
+          error: Tämän uutiskirjeen luonnissa tapahtui virhe.
+          success: Uutiskirje luotu onnistuneesti. Tarkasta se ennen lähetystä.
+        deliver:
+          error: Tämän uutiskirjeen toimituksessa tapahtui virhe.
+          success: Uutiskirje toimitettu onnistuneesti.
+        destroy:
+          error_already_sent: 'Uutiskirjettä ei voi tuhota: se on jo lähetetty.'
+          success: Uutiskirje tuhottu onnistuneesti.
+        edit:
+          save_and_preview: Tallenna ja esikatsele
+          title: Muokkaa uutiskirjettä
+        form:
+          interpolations_hint: 'Vihje: Voit käyttää "%{name}" -merkkijonoa missä tahansa viestin rungossa, mikä korvataan vastaanottajan nimellä.'
+        index:
+          confirm_delete: Haluatko varmasti poistaa tämän uutiskirjeen?
+          title: Uutiskirjeet
+        new:
+          save: Tallenna
+          title: Uusi uutiskirje
+        show:
+          confirm_deliver: Haluatko varmasti toimittaa tämän uutiskirjeen? Tätä toimintoa ei voi peruuttaa.
+          deliver: Toimita uutiskirje
+          preview: Esikatsele
+          subject: Otsikko
+        update:
+          error: Tämän uutiskirjeen päivityksessä tapahtui virhe.
+          success: Uutiskirje päivitetty onnistuneesti. Tarkasta se läpi ennen lähetystä.
+      organization:
+        edit:
+          title: Muokkaa organisaatiota
+          update: Päivitä
+        form:
+          facebook: Facebook
+          github: GitHub
+          instagram: Instagram
+          social_handlers: Sosiaalinen media
+          twitter: Twitter
+          url: URL
+          youtube: YouTube
+        update:
+          error: Tämän organisaation päivityksessä tapahtui virhe.
+          success: Organisaatio päivitetty onnistuneesti.
+      organization_appearance:
+        edit:
+          update: Päivitä
+        form:
+          cta_button_path_help: 'Voit korvata, missä etusivun Call To Action -painike linkittää. Käytä osittaisia ​​polkuja, ei täysiä URL-osoitteita. Hyväksyy kirjaimet, numerot, viivat ja viivat, ja sen täytyy alkaa kirjaimella. Puhelutoiminto -painike näkyy kotisivulla tervetullut tekstin ja kuvauksen välillä. Esimerkki: %{url}'
+          cta_button_text_help: Voit korvata Call to Action -painikkeen tekstin kotisivuillesi organisaatiosi käytettävissä olevista kielistä. Jos asetusta ei ole asetettu, käytetään oletusarvoa. Puhelutoiminto -painike näkyy kotisivulla tervetullut tekstin ja kuvauksen välillä.
+          header_snippets_help: Käytä tätä kenttää lisätäksesi HTML-koodia sivun alkuun. Yleisin käyttötarve on sellaisten kolmannen osapuolen palveluiden integrointi, jotka vaativat JavaScript- tai CSS-koodin lisäystä sivun HTML-koodiin. Huomioi, että tämä lisätään ainoastaan julkisille sivuille, ei hallinnointisivuille.
+          homepage_appearance_title: Muokkaa kotisivua
+          layout_appearance_title: Muokkaa ulkoasun ulkoasua
+      scope_types:
+        create:
+          error: Uuden kontekstityypin luomisessa tapahtui virhe.
+          success: Kontekstin tyyppi luotu onnistuneesti.
+        destroy:
+          success: Kontekstin tyyppi tuhottu onnistuneesti
+        edit:
+          title: Muokkaa kontekstityyppiä
+          update: Päivitä
+        new:
+          create: Luo kontekstityyppi
+          title: Uusi konteksti
+        update:
+          error: Kontekstityypin päivityksessä tapahtui virhe.
+          success: Kontekstityyppi päivitetty onnistuneesti
+      scopes:
+        create:
+          error: Uuden kontekstin luonnissa tapahtui virhe.
+          success: Konteksti luotu onnistuneesti.
+        destroy:
+          success: Konteksti tuhottu onnistuneesti
+        edit:
+          title: Muokkaa kontekstia
+          update: Päivitä
+        new:
+          create: Luo konteksti
+          title: Uusi konteksti
+        no_scopes: Tällä tasolla ei ole konteksteja.
+        update:
+          error: Tämän kontekstin päivityksessä tapahtui virhe.
+          success: Konteksti päivitetty onnistuneesti
+      static_pages:
+        actions:
+          view: Näytä julkinen sivu
+        create:
+          error: Uuden sivun luonnissa tapahtui virhe.
+          success: Sivu luotu onnistuneesti.
+        destroy:
+          success: Sivu tuhottu onnistuneesti
+        edit:
+          title: Muokkaa sivua
+          update: Päivitä
+        new:
+          create: Uusi
+          title: Uusi sivu
+        update:
+          error: Tämän sivun päivityksessä tapahtui virhe.
+          success: Sivu päivitetty onnistuneesti
+      titles:
+        dashboard: Hallintapaneeli
+        impersonations: Esiintymiset käyttäjinä
+        managed_users: Hallinnoitavat käyttäjät
+        scope_types: Kontekstityypit
+        scopes: Kontekstit
+        static_pages: Sivut
+        user_groups: Käyttäjäryhmät
+        users: Käyttäjät
+      user_group:
+        reject:
+          invalid: Käyttäjäryhmän hylkäämisessä tapahtui virhe.
+          success: Käyttäjäryhmä hylätty onnistuneesti
+        verify:
+          invalid: Käyttäjäryhmän vahvistuksessa tapahtui virhe.
+          success: Käyttäjäryhmä vahvistaminen onnistui
+      user_groups:
+        index:
+          filter:
+            all: Kaikki
+            pending: Odottaa
+            rejected: Hylätty
+            verified: Vahvistettu
+          filter_by: Suodata
+          search: Etsi
+          state:
+            pending: Odottaa
+            rejected: Hylätty
+            verified: Vahvistettu
+      users:
+        create:
+          error: Tämän käyttäjän kutsumisessa tapahtui virhe.
+          success: Käyttäjä kutsuttu onnistuneesti.
+        destroy:
+          error: Tämän käyttäjän poistamisessa tapahtui virhe.
+          success: Käyttäjä ei ole enää hallinnoija.
+        form:
+          email: Sähköposti
+          name: Nimi
+          role: Rooli
+        new:
+          create: Kutsu
+          title: Kutsu käyttäjä hallinnoijaksi
+    moderations:
+      actions:
+        hidden: Piilotettu
+        hide: Piilota
+        not_hidden: Näkyvillä
+        title: Toiminnot
+        unreport: Poista raportointi
+      admin:
+        reportable:
+          hide:
+            invalid: Resurssin piilotuksessa tapahtui virhe.
+            success: Resurssi piilotettu onnistuneesti.
+          unreport:
+            invalid: Resurssin raportoinnin poistamisessa tapahtui virhe.
+            success: Resurssin raportointi onnistuneesti poistettu.
+      models:
+        moderation:
+          fields:
+            hidden_at: Piilotuksen ajankohta
+            report_count: Määrä
+            reportable: Raportoitava
+            reported_content_url: Raportoidun sisällön URL
+            reports: Raportit
+  errors:
+    messages:
+      invalid_json: Virheellinen JSON
+  layouts:
+    decidim:
+      admin:
+        newsletters:
+          title: Uutiskirjeet
+        settings:
+          title: Asetukset
+        users:
+          title: Käyttäjät
+  time:
+    formats:
+      datepicker: "%d. %m. %Y"
+      timepicker: "%d/%m/%Y %H:%M"

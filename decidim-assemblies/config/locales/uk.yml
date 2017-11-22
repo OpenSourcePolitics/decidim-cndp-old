@@ -1,0 +1,134 @@
+uk:
+  activemodel:
+    attributes:
+      assembly:
+        banner_image: Банерне зображення
+        copy_categories: Скопіювати розділи
+        copy_features: Скопіювати складові
+        description: Опис
+        developer_group: Група розробників
+        domain: Домен
+        hashtag: Хештег
+        hero_image: Зображення головної сторінки
+        local_area: Місцевість
+        meta_scope: Метадані терену
+        participatory_scope: Терен співучасті
+        participatory_structure: Структура співучасті
+        promoted: Рекламується
+        scope_id: Терен
+        scopes_enabled: Ввімкнені терени
+        short_description: Стислий опис
+        slug: Скорочена URL-адреса
+        subtitle: Підзаголовок
+        target: Мета
+        title: Назва
+  decidim:
+    admin:
+      assemblies:
+        create:
+          error: При створенні нових зборів сталася помилка.
+          success: Збори успішно додано.
+        destroy:
+          success: Збори успішно видалено.
+        edit:
+          update: Оновити
+        form:
+          title: Загальні відомості
+        index:
+          not_published: Не опубліковано
+          published: Опубліковано
+        new:
+          create: Додати
+          title: Нові збори
+        update:
+          error: При оновленні цих зборів сталася помилка.
+          success: Збори успішно оновлено.
+      assemblies_copies:
+        create:
+          error: При створенні копії цих зборів сталася помилка.
+          success: Успішно створено копію зборів.
+      assembly_copies:
+        new:
+          copy: Скопіювати
+          select: Оберіть дані, копію яких ви хотіли б створити
+          title: Створити копію зборів
+      assembly_publications:
+        create:
+          error: Під час публікації цих зборів сталася помилка.
+          success: Збори успішно опубліковано.
+        destroy:
+          error: При скасуванні публікації цих зборів сталася помилка.
+          success: Публікацію зборів успішно скасовано.
+      menu:
+        assemblies: Збори
+        assemblies_submenu:
+          attachments: Вкладені файли
+          categories: Розділи
+          features: Складові
+          info: Відомості
+          moderations: Дії з модерації
+      models:
+        assembly:
+          fields:
+            created_at: 'Додано:'
+            promoted: Висвітлено
+            published: Опубліковано
+            title: Назва
+          name: Збори
+      titles:
+        assemblies: Збори
+    assemblies:
+      admin:
+        assemblies:
+          form:
+            slug_help: 'Cкорочені URL-адреси використовуються для створення посилань на ці збори. В них припустимі лише букви, цифри та тире, і вони мають починатися з букви. Приклад: %{url}'
+        assembly_copies:
+          form:
+            slug_help: 'Cкорочені URL-адреси використовуються для створення посилань на ці збори. В них припустимі лише букви, цифри та тире, і вони мають починатися з букви. Приклад: %{url}'
+      index:
+        title: Збори
+      show:
+        developer_group: Група розробників
+        local_area: Місцевість
+        participatory_scope: Терен співучасті
+        participatory_structure: Структура співучасті
+        scope: Терен
+        target: Мета
+      statistics:
+        answers_count: Відповіді
+        assemblies_count: Збори
+        comments_count: Коментарі
+        headline: Діяльність
+        meetings_count: Зустрічі
+        orders_count: Голоси
+        pages_count: Сторінки
+        projects_count: Проекти
+        proposals_count: Пропозиції
+        results_count: Підсумки
+        surveys_count: Опитування
+        users_count: Учасники
+        votes_count: Голоси
+    menu:
+      assemblies: Збори
+  layouts:
+    decidim:
+      assemblies:
+        assembly:
+          take_part: Взяти участь
+        index:
+          promoted_assemblies: Висвітлені збори
+        order_by_assemblies:
+          assemblies:
+            one: "%{count} (одні) збори"
+            few: "%{count} зборів"
+            many: "%{count} зборів"
+            other: "%{count} зборів"
+        promoted_assembly:
+          more_info: Додаткові відомості
+          take_part: Взяти участь
+      assembly_header:
+        assembly_menu_item: Збори
+        unfold: Розгорнути
+      assembly_widgets:
+        show:
+          take_part: Взяти участь

@@ -1,0 +1,468 @@
+eu:
+  activemodel:
+    attributes:
+      attachment:
+        description: Descripción
+        file: Fitxategia
+        title: Titulua
+      category:
+        description: Descripción
+        name: Izena
+        parent_id: Nagusia
+      feature:
+        name: Izena
+        weight: Pisua
+      newsletter:
+        body: Testua
+        subject: Gaia
+      organization:
+        default_locale: Eskualdeko ezarpen lehenetsiak
+        name: Izena
+        reference_prefix: Erreferentzia-aurrizkia
+      organization_appearance:
+        cta_button_path: Deitu ekintza botoiaren bideora
+        cta_button_text: Deitu ekintza botoiaren testura
+        description: Descripción
+        favicon: Ikonoa
+        header_snippets: Izenburu-snippets-ak
+        homepage_image: Orri nagusiko irudia
+        logo: Logotipo
+        official_img_footer: Orri-oineko logotipo ofiziala
+        official_img_header: Goiburuko logotipo ofiziala
+        official_url: Erakundearen URL ofiziala
+        show_statistics: Erakutsi estatistikak
+        welcome_text: Ongietorri-testua
+      scope:
+        code: Kodea
+        name: Izena
+        organization: Erakundea
+        scope_type: Esparru mota
+      scope_type:
+        name: Izena
+        organization: Erakundea
+        plural: Anitza
+      static_page:
+        content: Edukia
+        organization: Erakundea
+        slug: URL laburra
+        title: Titulua
+  activerecord:
+    attributes:
+      decidim/participatory_process:
+        banner_image: Iragarki-bandako irudia
+        description: Descripción
+        developer_group: Talde sustatzailea
+        domain: Domeinua
+        end_date: Bukaera-data
+        hashtag: Traola
+        hero_image: Orri nagusiko irudia
+        local_area: Udal-alorrak
+        meta_scope: 'Metadatuak: esparrua'
+        participatory_scope: Partehartze esparrua
+        participatory_structure: Partehartze egitura
+        promoted: Nabarmendua
+        scope: Esparrua
+        short_description: Deskribapen laburra
+        slug: URL testu laburra
+        start_date: Hasiera-data
+        subtitle: Azpititulua
+        target: Nori zuzentzen zaio?
+        title: Titulua
+      decidim/participatory_process_group:
+        description: Deskribapena
+        hero_image: Orri nagusiko irudia
+        name: Izena
+        participatory_processes: Prozesu partizipatiboak
+      decidim/participatory_process_step:
+        end_date: Bukaera-data
+        start_date: Hasiera-data
+      decidim/static_page:
+        content: Contenido
+        slug: URL laburra
+        title: Titulua
+  date:
+    formats:
+      datepicker: "%Y / %m / %d"
+  decidim:
+    admin:
+      actions:
+        add: Gehitu
+        browse: Arakatu
+        export: Esportatu
+        manage: Kudeatu
+        permissions: Baimenak
+        reject: Ukatu
+        verify: Egiaztatu
+      attachments:
+        create:
+          error: Errorea gertatu da fitxategi erantsi bat sortzean.
+          success: Fitxategi erantsia zuzen sortu da.
+        destroy:
+          success: Fitxategi erantsia zuzen ezabatu da.
+        edit:
+          title: Editatu fitxategi erantsia
+          update: Eguneratu
+        index:
+          attachments_title: Eranskinak
+        new:
+          create: Sortu fitxategi erantsia
+          title: Fitxategi erantsi berria
+        update:
+          error: Errorea gertatu da fitxategi erantsi bat eguneratzean.
+          success: Fitxategi erantsia zuzen eguneratu da.
+      categories:
+        create:
+          error: Errorea gertatu da kategoria hau sortzean.
+          success: Kategoria zuzen sortu da.
+        destroy:
+          error: Errorea gertatu da kategoria hau ezabatzean. Mesedez, lehenik eta behin ezabatu azpikategoriak oro, ziurtatu beste ezein entitaterik ez dagoela kategoria honetan, eta saiatu berriro.
+          success: Kategoria zuzen ezabatu da.
+        edit:
+          title: Editatu kategoria
+          update: Eguneratu
+        index:
+          categories_title: Kategoriak
+          category_used: Kategoria hau ezin da ezabatu erabiltzen ari delako.
+        new:
+          create: Sortu kategoria
+          title: Kategoria berria
+        update:
+          error: Errorea gertatu da kategoria hau eguneratzean.
+          success: Kategoria zuzen eguneratu da.
+      dashboard:
+        show:
+          welcome: Ongi etorri Decidim administrazio-panel berrira.
+      exports:
+        export_as: "%{name} honako hau gisa: %{export_format}"
+        notice: Zure esportazioa bidean da. Mezu elektroniko bat jasoko duzu bukatutakoan.
+      feature_permissions:
+        edit:
+          everyone: Edonor
+          submit: Gorde baimenak
+          title: Editatu baimenak
+        update:
+          success: Baimenak zuzen eguneratu dira.
+      features:
+        create:
+          error: Errorea gertatu da funtzionalitate hau gehitzean.
+          success: Funtzionalitatea zuzen gehitu da.
+        destroy:
+          error: Errorea gertatu da funtzionalitate hau ezabatzean.
+          success: Funtzionalitatea zuzen ezabatu da.
+        edit:
+          title: Editatu funtzionalitatea
+          update: Eguneratu
+        form:
+          default_step_settings: Urrats ezarpen lehenetsiak
+          global_settings: Ezarpen orokorrak
+          step_settings: Fase-konfigurazioa
+        index:
+          add: Erantsi funtzionalitatea
+          headers:
+            actions: Ekintzak
+            name: Funtzionalitatearen izena
+            type: Funtzionalitate-mota
+        new:
+          add: Erantsi funtzionalitatea
+          title: 'Gehitu funtzionalitatea: %{name}'
+        publish:
+          success: Funtzionalitatea zuzen argitaratu da
+        title: Funtzionalitateak
+        unpublish:
+          success: Funtzionalitatea zuzen desargitaratu da.
+        update:
+          error: Errorea gertatu da funtzionalitate hau eguneratzean.
+          success: Funtzionalitatea zuzen eguneratu da.
+      managed_users:
+        close_session:
+          error: Errore bat gertatu da egungo suplifikaziorako saioa ixtean.
+          success: Uneko sinplifikazioa saioa amaitu da.
+        create:
+          error: Errore bat gertatu da kudeatutako erabiltzailea sortzean.
+          success: Erabiltzaile kudeatua arrakastaz sortu da.
+        form:
+          name: Izena
+        impersonate:
+          error: Errore bat gertatu da kudeatutako erabiltzailea ordezkatzean.
+        impersonations:
+          new:
+            impersonate: Ordeztu
+            new_managed_user_impersonation: Kudeatutako erabiltzailearen ordezte berria
+        index:
+          impersonate: Ordeztu
+          needs_authoriation_warning: Gutxienez baimen gaitu bat behar duzu erakunde honendako.
+          promote: Goratu
+          view_logs: Ikusi erregistroak
+        new:
+          create: Sortu
+          new_managed_user: Erabiltzaile kudeatu berria
+          select_authorization_method: Hautatu autorizazio metodoa
+          step: '%{total} fasetatik %{current}.a'
+        promotion:
+          error: Errorea gertatu da kudeatutako erabiltzailea mailaz igotzean.
+          success: Kudeatutako erabiltzailea zuzen igo da mailaz.
+        promotions:
+          new:
+            explanation: Kudeatutako erabiltzaileak erabiltzaile estandar mailara igo daitezke. Horrek esan nahi du aplikaziora gonbidatuak izanen direla eta ezingo direla berriro ere ordeztu. Erabiltzaile gonbidatuak mezu elektroniko bat jasoko du gonbita onartzeko.
+            new_managed_user_promotion: Kudeatutako erabiltzaileen maila igoera berria
+            promote: Goratu
+      menu:
+        admins: Administratzaileak
+        appearance: Itxura
+        configuration: konfigurazioa
+        dashboard: Kontrol-panela
+        managed_users: Kudeatutako erabiltzaileak
+        newsletters: Buletinak
+        scope_types: Esparru motak
+        scopes: Esparruak
+        settings: Ezarpenak
+        static_pages: Orriak
+        user_groups: Erabiltzaile-taldeak
+        users: Erabiltzaileak
+      models:
+        attachment:
+          fields:
+            content_type: Mota
+            title: Titulua
+          name: Fitxategi erantsia
+        category:
+          name: Kategoria
+        impersonation_log:
+          fields:
+            admin: Administratzailea
+            ended_at: 'Bukaera-data:'
+            expired_at: 'Iraungitze-data:'
+            started_at: 'Hasiera-ordua:'
+            user: Erabiltzailea
+        managed_user:
+          name: Erabiltzaile kudeatua
+        newsletter:
+          fields:
+            created_at: Sortze-data
+            progress: ' Aurrerapena '
+            sent_at: ' Bidalketa-data: '
+            subject: Gaia
+          name: Buletina
+        scope:
+          fields:
+            name: Izena
+            scope_type: Esparru mota
+        scope_type:
+          fields:
+            name: Izena
+            plural: Anitza
+        static_page:
+          fields:
+            created_at: Tan sortua
+            title: Titulua
+        user:
+          fields:
+            created_at: Sortze-data
+            email: Helbide elektronikoa
+            last_sign_in_at: Identifikazioaren azken-data
+            name: Izena
+            role: Rola
+            roles:
+              admin: Administratzailea
+              user_manager: Erabiltzailearen kudeatzailea
+          name: Erabiltzailea
+        user_group:
+          fields:
+            actions: Ekintzak
+            created_at: Tan sortua
+            document_number: Agiri-zenbakia
+            name: Izena
+            phone: Telefonoa
+            state: Egoera
+            users_count: Erabiltzaile kopurua
+      moderations:
+        index:
+          title: ' Salaketak'
+        report:
+          reasons:
+            does_not_belong: Ez du zer ikusirik
+            offensive: Iraingarria
+            spam: Spam
+      newsletters:
+        create:
+          error: ' Errorea gertatu da buletin hau sortzean.'
+          success: Buletina ongi sortu da. Mesedez, berrikusi bidali baino lehen.
+        deliver:
+          error: Errorea gertatu da buletin hau entregatzean.
+          success: Buletina ongi bidali da.
+        destroy:
+          error_already_sent: 'Albiste-buletina ezin da deuseztatu: Bidalita dago jada.'
+          success: Buletina ongi deuseztatu da.
+        edit:
+          save_and_preview: Gorde eta aurreikusi
+          title: Editatu buletina
+        form:
+          interpolations_hint: 'Iradokizuna: "%{name}" erabil dezakezu gaiaren edo testuaren edozein tokitan, eta horren ordez hartzailearen izena agertuko da.'
+        index:
+          confirm_delete: Ziur zaude buletin hau deuseztatu nahi duzula?
+          title: Buletinak
+        new:
+          save: Gorde
+          title: Buletin berria
+        show:
+          confirm_deliver: Ziur zaude buletin hau bidali nahi duzula? Ekintza hau ezin da desegin.
+          deliver: Bidali buletina
+          preview: Aurreikusi
+          subject: Gaia
+        update:
+          error: Errorea gertatu da buletin hau eguneratzean.
+          success: Buletina zuzen eguneratu da. Mesedez, berrikusi bidali baino lehen.
+      organization:
+        edit:
+          title: Editatu erakundea
+          update: Eguneratu
+        form:
+          facebook: Facebook
+          github: GitHub
+          instagram: Instagram
+          social_handlers: Gizarte
+          twitter: Twitter
+          url: Url
+          youtube: YouTube
+        update:
+          error: Errorea gertatu da erakunde hau eguneratzean.
+          success: Erakundea zuzen eguneratu da.
+      organization_appearance:
+        edit:
+          update: Eguneratu
+        form:
+          cta_button_path_help: 'Orrialde nagusira deitzeko dei-botoirako esteka gainidatzi dezakezu. Erabili bideak partzialak, ez URL osoak hemen. Letrak, zenbakiak, marrak eta barrak onartzen ditu eta gutun batekin hasi behar duzu. The Call To Action botoian hasierako orrian erakusten da ongietorri testua eta azalpena. Adibidea: %{url}'
+          cta_button_text_help: Hasierako pantailako Call To Action botoian testua gainidatz dezakezu zure erakundeko hizkuntza bakoitzarentzat. Ezartzen bada, balio lehenetsia erabiliko da. The Call To Action botoian hasierako orrian erakusten da ongietorri testua eta azalpena.
+          header_snippets_help: Erabili eremu hau HTML goiburuari gauzak gehitzeko. Erabilerarik ohikoena da JavaScript edo CSS gehigarriak behar dituzten hirugarrenen zerbitzuak txertatzea. Gainera, HTMLari meta-etiketa gehigarriak gehitzeko erabil dezakezu. Kontuan hartu orri publikoetan baino ez dela erakutsiko, ez administrazio atalean.
+          homepage_appearance_title: Editatu orriaren itxura
+          layout_appearance_title: Editatu itxura diseinua
+      scope_types:
+        create:
+          error: Errore bat gertatu da esparru mota berri bat sortzean.
+          success: Esparru mota arrakastaz sortu da.
+        destroy:
+          success: Esparru mota arrakastaz suntsitu da
+        edit:
+          title: Editatu esparru mota
+          update: Eguneratu
+        new:
+          create: Sortu esparru mota
+          title: Esparru berria
+        update:
+          error: Errore bat gertatu da esparru mota hau eguneratzean.
+          success: Esparru mota arrakastaz eguneratu da
+      scopes:
+        create:
+          error: Errorea gertatu da esparru berri bat sortzean.
+          success: Esparrua zuzen sortu da.
+        destroy:
+          success: Esparrua ongi ezabatu da
+        edit:
+          title: Editatu helmena
+          update: Eguneratu
+        new:
+          create: Sortu esparrua
+          title: Esparru berria
+        no_scopes: Maila honetan ez dago esparrurik.
+        update:
+          error: Errorea gertatu da esparru hau eguneratzean.
+          success: Esparrua zuzen eguneratu da
+      static_pages:
+        actions:
+          view: Ikusi orri publikoa
+        create:
+          error: Errorea gertatu da orri berri bat sortzean.
+          success: Orria zuzen eguneratu da. Orain, jarrai ezazu faseak konfiguratzen.
+        destroy:
+          success: Orria zuzen ezabatu da.
+        edit:
+          title: Editatu orria
+          update: Eguneratu
+        new:
+          create: Berria
+          title: Orri berria
+        update:
+          error: Errorea gertatu da orri hau eguneratzean.
+          success: Orria zuzen eguneratu da.
+      titles:
+        dashboard: Kontrol-panela
+        impersonations: Ordezteak
+        managed_users: Kudeatutako erabiltzaileak
+        scope_types: Esparru motak
+        scopes: Esparruak
+        static_pages: Orriak
+        user_groups: Erabiltzaile-taldeak
+        users: Erabiltzaileak
+      user_group:
+        reject:
+          invalid: Errore bat gertatu da erabiltzaile talde hau arbuiatzerakoan.
+          success: Erabiltzaile taldea arrakastaz arbuiatua
+        verify:
+          invalid: Errorea gertatu da erabiltzaile-talde hau egiaztatzean.
+          success: Erabiltzaile-taldea ongi egiaztatu da
+      user_groups:
+        index:
+          filter:
+            all: Guztiak
+            pending: Zain
+            rejected: Ukatua
+            verified: Egiaztatuta
+          filter_by: 'Iragazi honen arabera:'
+          search: Bilatu
+          state:
+            pending: Zain
+            rejected: Ukatua
+            verified: Egiaztatuta
+      users:
+        create:
+          error: Errorea gertatu da erabiltzaile honi gonbit egitean.
+          success: Ongi egin zaio gonbit erabiltzaileari.
+        destroy:
+          error: Errorea gertatu da erabiltzaile hau ezabatzen saiatzean.
+          success: Erabiltzailea ez da jada administratzailea.
+        form:
+          email: Helbide elektronikoa
+          name: Izena
+          role: Rola
+        new:
+          create: Gonbit egin
+          title: Gonbit egin erabiltzaile bati administratzaile gisa
+    moderations:
+      actions:
+        hidden: ' Ezkutatuta'
+        hide: Ezkutatu
+        not_hidden: Ezkutatu gabe
+        title: Ekintzak
+        unreport: Ezeztatu salaketa
+      admin:
+        reportable:
+          hide:
+            invalid: Errorea gertatu da edukia ezkutatzean.
+            success: Edukia zuzen ezkutatu da.
+          unreport:
+            invalid: Arazo bat izan da salaketa ezeztatzean.
+            success: Salaketa zuzen ezeztatu da.
+      models:
+        moderation:
+          fields:
+            hidden_at: Ezkutatze-data
+            report_count: Zenbaketa
+            reportable: Mota
+            reported_content_url: Emandako edukiaren URLa
+            reports: Salaketak
+  errors:
+    messages:
+      invalid_json: JSON baliogabea
+  layouts:
+    decidim:
+      admin:
+        newsletters:
+          title: Buletinak
+        settings:
+          title: Ezarpenak
+        users:
+          title: Erabiltzaileak
+  time:
+    formats:
+      datepicker: "%Y / %m / %d"
+      timepicker: "%d/%m/%Y %H:%M"

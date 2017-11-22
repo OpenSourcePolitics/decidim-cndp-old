@@ -1,0 +1,403 @@
+fr:
+  activemodel:
+    attributes:
+      account:
+        delete_reason: Pour quelle(s) raison(s) supprimez-vous votre compte ?
+      report:
+        details: Commentaires additionnels
+      user:
+        email: Votre email
+        name: Votre nom
+        password: Nouveau mot de passe
+        password_confirmation: Confirmez votre nouveau mot de passe
+        remove_avatar: Supprimer l'avatar
+        user_group_document_number: Numéro d'identification de l'organisation
+        user_group_name: Nom de l'organisation
+        user_group_phone: Téléphone de l'organisation
+  activerecord:
+    attributes:
+      decidim/user:
+        current_password: Mot de passe actuel
+        email: Courriel
+        name: Nom d'utilisateur
+        password: Mot de passe
+        password_confirmation: Confirmation mot de passe
+        remember_me: Rester connecté
+        user_group_document_number: Numéro de document de l'organisation
+        user_group_name: Nom de l'organisation
+        user_group_phone: Téléphone de l'organisation
+  booleans:
+    'false': 'Non'
+    'true': 'Oui'
+  carrierwave:
+    errors:
+      image_too_big: L'image est trop grande
+  decidim:
+    account:
+      delete:
+        alert: Cette action ne peut pas être annulée. Si vous supprimez votre compte, vous ne pourrez plus vous connecter.
+        confirm:
+          close: Fermer la fenêtre
+          ok: Oui, je souhaite supprimer mon compte
+          question: Êtes-vous sûr de vouloir supprimer votre compte?
+          title: Supprimer mon compte
+        explanation: Veuillez indiquer la raison pour laquelle vous souhaitez supprimer votre compte (facultatif).
+      destroy:
+        error: Une erreur s'est produite lors de la suppression de votre compte.
+        success: Votre compte a été supprimé avec succès.
+      show:
+        change_password: Changer de mot de passe
+        update_account: Mettre à jour votre compte
+      update:
+        error: Une erreur s'est produite lors de la mise à jour de votre compte.
+        success: Votre compte a été mis à jour avec succès.
+        success_with_email_confirmation: Votre compte a été mis à jour avec succès. Vous recevrez un email pour confirmer votre nouvelle adresse e-mail.
+    anonymous_user: Anonyme
+    application:
+      documents:
+        related_documents: Documents connexes
+      photos:
+        related_photos: Photos associées
+    authorization_handlers:
+      decidim/dummy_authorization_handler:
+        fields:
+          document_number: Numéro de document
+          postal_code: Code postal
+        name: Exemple d'autorisation
+      errors:
+        duplicate_authorization: Un utilisateur est déjà autorisé avec les mêmes données.
+      foo_authorization:
+        fields:
+          bar: Machin
+          foo: Truc
+        name: Autorisation Truc
+    authorizations:
+      create:
+        error: Une erreur s'est produite lors de la création de l'autorisation.
+        success: Votre autorisation a été réalisée avec succès.
+      first_login:
+        actions:
+          decidim/dummy_authorization_handler: Vérifier en comparant avec l'autorisation exemple
+        title: Vérifiez votre identité
+        verify_with_these_options: 'Voici les options disponibles pour vérifier votre identité:'
+      new:
+        authorize: Envoyer
+        authorize_with: Vérifiez avec %{authorizer}
+      skip_verification: Vous pouvez ignorer ceci pour l'instant et %{link}
+      start_exploring: Commencez à explorer
+    core:
+      actions:
+        unauthorized: Vous n'êtes pas autorisé à effectuer cette action
+    devise:
+      omniauth_registrations:
+        create:
+          email_already_exists: Un autre compte utilise la même adresse de email
+        new:
+          complete_profile: Complétez votre profil
+          sign_up: Veuillez compléter votre profil
+          subtitle: Remplissez le formulaire suivant pour compléter l'inscription
+          username_help: Nom public qui apparaît pour vos messages. Dans le but de garantir l'anonymat, vous pouvez choisir n'importe quel nom.
+      registrations:
+        new:
+          already_have_an_account?: Vous avez déjà un compte?
+          newsletter_notifications: Recevoir des lettres d'informations sur l'activité de la plateforme
+          sign_in: S'identifier
+          sign_up: S'inscrire
+          sign_up_as:
+            legend: S'inscrire en tant que
+            user: Individu
+            user_group: Organisation / Collectif
+          subtitle: Inscrivez-vous pour participer aux discussions et pour exprimer votre soutien aux propositions de votre choix.
+          terms: Les termes et conditions d'utilisation
+          tos_agreement: En vous inscrivant, vous acceptez %{link}.
+          username_help: Nom public qui apparaît pour vos messages. Dans le but de garantir l'anonymat, vous pouvez choisir n'importe quel nom.
+      sessions:
+        new:
+          are_you_new?: Nouveau sur la plate-forme?
+          register: Créer un compte
+      shared:
+        omniauth_buttons:
+          or: Ou
+    errors:
+      internal_server_error:
+        title: Il y a eu un problème avec notre serveur
+        try_later: Veuillez réessayer plus tard.
+      not_found:
+        back_home: Retour à l'accueil
+        content_doesnt_exist: Cette adresse web est incorrecte ou n'existe plus.
+        title: La page que vous recherchez ne peut être trouvée
+    events:
+      email_event:
+        email_greeting: Bonjour %{user_name},
+        email_intro: '« %{resource_title} » a été mis à jour. Vous pouvez le voir sur cette page :'
+        email_outro: Vous recevez cet notification car vous suivez « %{resource_title} ». Vous pouvez cesser de le suivre en allant sur le lien précédent.
+        email_subject: Mise à jour de %{resource_title}
+      notification_event:
+        notification_title: Un événement a eu lieu à <a href="%{resource_path}">%{resource_title}</a>.
+    export_mailer:
+      export:
+        ready: Vous trouverez ci-joint une version zippée de votre exportation.
+      subject: Votre export "%{name}" est prêt
+    features:
+      dummy:
+        actions:
+          bar: Machin
+          foo: Truc
+        name: Fonctionnalité exemple
+        settings:
+          global:
+            comments_enabled: Commentaires activés
+            dummy_global_attribute_1: Exemple d'attribut 1
+            dummy_global_attribute_2: Exemple d'attribut 2
+          step:
+            comments_blocked: Commentaires bloqués
+            dummy_step_attribute_1: Exemple d'attribut pour une étape 1
+            dummy_step_attribute_2: Exemple d'attribut pour une étape 2
+    filters:
+      linked_classes:
+        all: Tout
+        dummyresource: Exemple factice
+        meeting: Rencontres
+        project: Projets
+        proposal: Propositions
+        result: Résultats
+    follows:
+      create:
+        button: Suivre
+        error: Une erreur s'est produite lors du traitement de votre demande "Suivre".
+      destroy:
+        button: Ne plus suivre
+        error: Une erreur s'est produite lors du traitement de votre demande "Ne plus suivre".
+    forms:
+      current_file: Fichier actuel
+      current_image: Image actuelle
+      default_image: Image par défaut
+      errors:
+        error: Ce champ contient une erreur.
+      remove_this_file: Supprimer ce fichier
+    managed_users:
+      expired_session: La session de connexion a expiré.
+    menu:
+      home: Accueil
+      more_information: Plus d'information
+    newsletter_mailer:
+      newsletter:
+        note: Vous avez reçu ce courrier électronique parce que vous êtes abonné aux bulletins d'information de %{organization_name}. Vous pouvez modifier vos paramètres sur votre <a href="%{link}">page de notifications</a>.
+    notifications_settings:
+      show:
+        email_on_notification: Je veux recevoir un courriel chaque fois que je reçois une notification.
+        newsletter_notifications: Je souhaite recevoir des lettres d'informations sur l'activité de la plateforme
+        update_notifications_settings: Enregistrer les modifications
+      update:
+        error: Une erreur s'est produite lors de la mise à jour des paramètres de vos notifications.
+        success: Vos paramètres de notifications ont été mis à jour avec succès.
+    own_user_groups:
+      index:
+        pending: En attente
+        rejected: Refusée
+        verified: Vérifié
+    pages:
+      index:
+        title: Plus d'information
+    reported_mailer:
+      hide:
+        hello: Bonjour %{name},
+        manage_moderations: Gérer les modérations
+        report_html: <p>Le <a href="%{url}">contenu suivant</a> a été masqué automatiquement.</p>
+        subject: Une ressource a été cachée automatiquement
+      report:
+        hello: Bonjour %{name},
+        manage_moderations: Gérer les modérations
+        report_html: <p>Le <a href="%{url}">contenu</a> suivant a été signalé.</p>
+        subject: Une ressource a été signalée
+    reports:
+      create:
+        error: Une erreur s'est produite lors de la création du rapport. Veuillez essayer à nouveau.
+        success: Le contenu a été signalé, il sera examiné par un administrateur.
+    shared:
+      action_authorization_modal:
+        incomplete:
+          cancel: Annuler
+          explanation: 'Même si vous êtes actuellement autorisé avec "%{authorization}", nous avons besoin de vous réautoriser car nous ne disposons pas les données suivantes:'
+          reauthorize: Réautoriser
+          title: Veuillez réautoriser
+        missing:
+          authorize: Autoriser avec "%{authorization}"
+          explanation: Pour effectuer cette action, vous devez être autorisé avec "%{authorization}".
+          title: Autorisation requise
+        unauthorized:
+          explanation: Désolé, vous ne pouvez pas effectuer cette action car certaines de vos données d'autorisation ne correspondent pas.
+          invalid: "%{field} n'est pas valide."
+          ok: D'accord
+          title: Non autorisé
+      embed_modal:
+        close_window: Fermer la fenêtre
+        embed: Veuillez coller ce code dans votre page
+        embed_link: Intégrer
+      flag_modal:
+        already_reported: Ce contenu a déjà été signalé et il sera examiné par un administrateur.
+        close: Fermer
+        description: Ce contenu est-il inapproprié?
+        does_not_belong: Contient des activités illégales, des menaces suicidaires, des informations personnelles, ou autre chose que vous pensez ne pas être approprié à %{organization_name}.
+        offensive: Contient des propos racistes, sexistes, des insultes, des attaques personnelles, des menaces de mort, des incitations au suicide ou toute forme de discours de haine.
+        report: Signaler
+        spam: Contient des piège-à-clic (clickbait), des publicités, des escroqueries ou des robots fonctionnant au script (script bots).
+        title: Signaler un problème
+      follow_button:
+        sign_in_before_follow: Veuillez vous connecter avant d'effectuer cette action
+      login_modal:
+        please_sign_in: Veuillez vous connecter
+        sign_up: S'inscrire
+      reference:
+        reference: 'Référence: %{reference}'
+      results_per_page:
+        label: 'Résultats par page :'
+      share_modal:
+        close_window: Fermer la fenêtre
+        share: Partager
+        share_link: Lien de partage
+  devise:
+    invitations:
+      edit:
+        header: Définir votre mot de passe
+        submit_button: sauvegarder
+    mailer:
+      invitation_instructions:
+        accept: Accepter l'invitation
+        accept_until: Cette invitation expirera le %{due_date}.
+        hello: Bonjour %{email},
+        ignore: |-
+          Si vous ne souhaitez pas accepter l'invitation, ignorez cet email.<br /> Votre compte ne sera créé qu'après avoir cliqué sur le lien ci-dessus et défini votre mot de passe.
+        invited_you_as_admin: "%{invited_by} vous a invité en tant qu'administrateur de %{application}. Vous pouvez accepter cette invitation grâce au lien ci-dessous."
+        someone_invited_you: Quelqu'un vous a invité à %{application}. Vous pouvez accepter cette invitation grâce au lien ci-dessous.
+        someone_invited_you_as_admin: Quelqu'un vous a invité en tant qu'administrateur de %{application}, vous pouvez l'accepter via le lien ci-dessous.
+      invite_admin:
+        subject: Vous avez été invité à gérer %{organization}
+      invite_collaborator:
+        subject: Vous avez été invité à collaborer sur %{organization}
+      organization_admin_invitation_instructions:
+        subject: Vous avez été invité à gérer %{organization}
+      password_change:
+        greeting: Bonjour %{recipient}!
+        message: Nous vous contactons pour vous informer que votre mot de passe a été modifié.
+        subject: Mot de passe modifié
+  errors:
+    messages:
+      content_type_whitelist_error: Le type de fichier n'est pas valide
+      cycle_detected: un périmètre d'application ne peut pas être du même niveau que ses descendants
+      file_size_is_less_than_or_equal_to: la taille du fichier doit être inférieure ou égale à %{count}
+      invalid_manifest: Manifeste invalide
+      invalid_participatory_process: Processus participatif invalide
+      long_words: Contient des mots trop longs
+      must_start_with_caps: Doit commencer par des majuscules
+      nesting_too_deep: ne peut pas être à l'intérieur d'une sous-catégorie
+      too_many_marks: Utilise trop de signes de ponctuations
+      too_much_caps: Utilise trop de majuscule
+      too_short: Est trop court
+  forms:
+    required: Champs obligatoires
+  invisible_captcha:
+    sentence_for_humans: Si vous êtes humain, ignorez ce champ
+    timestamp_error_message: Désolé, c'était trop rapide ! Veuillez le renvoyer.
+  layouts:
+    decidim:
+      cookie_warning:
+        description_html: Ce site utilise des cookies. En continuant à parcourir le site, vous acceptez notre utilisation des cookies. En savoir plus à ce sujet %{link}.
+        link_label: ici
+        ok: '"J''accepte"'
+      footer:
+        made_with_open_source: 'Site réalisé grâce au <a target="_blank" href="https://github.com/decidim/decidim">logiciel libre Decidim</a>.'
+      header:
+        close_menu: Fermer le menu
+        navigation: Navigation
+        sign_in: Se connecter
+        sign_up: S'inscrire
+      impersonation_warning:
+        close_session: Fermer la session
+        description_html: Vous agissez en tant que l'utilisateur <b>%{user_name}</b>.
+        expire_time_html: Votre session expirera dans <b><span class="minutes">%{minutes}</span> minutes</b>.
+      notifications_dashboard:
+        mark_all_as_read: Marquer tout comme lu
+        no_notifications: Il n'y a pas encore de notifications.
+        title: Notifications
+      user_menu:
+        admin_dashboard: Tableau de bord des administrateurs
+        notifications: Notifications
+        profile: Mon compte
+        sign_out: Déconnexion
+      user_profile:
+        account: Compte
+        authorizations: Autorisations
+        delete_my_account: Supprimer mon compte
+        notifications_settings: Paramètres des notifications
+        title: Paramètres utilisateur
+        user_groups: Organisations
+      widget:
+        see_more: Voir plus
+  locale:
+    name: Français
+  pages:
+    home:
+      extended:
+        debates: Débats
+        debates_explanation: Débattez et discutez, partagez vos points de vue et enrichissez les sujets pertinents.
+        how_to_participate: Comment puis-je participer à un processus participatif?
+        meetings: Rencontres
+        meetings_explanation: Découvrez où et quand vous pouvez participer à des réunions publiques.
+        more_info: En savoir plus
+        proposals: Propositions
+        proposals_explanation: Faites des propositions, appuyez les projets existants et favorisez les changements que vous souhaitez voir.
+      footer_sub_hero:
+        footer_sub_hero_body: Construisons une société plus ouverte, transparente et collaborative.<br /> Rejoignez le mouvement, participez au processus et décidez, ensemble.
+        footer_sub_hero_headline: Bienvenue sur la plate-forme participative de %{organization} .
+        register: S'inscrire
+      hero:
+        participate: Participez
+        welcome: Bienvenue sur %{organization}!
+      highlighted_processes:
+        active_processes: Processus participatifs actifs
+        active_step: Etape en cours
+        see_all_processes: Voir tous les processus participatifs
+      statistics:
+        answers_count: Réponses
+        comments_count: Commentaires
+        headline: État actuel de %{organization}
+        meetings_count: Rencontres
+        orders_count: Votes
+        pages_count: Pages
+        processes_count: Processus participatifs
+        projects_count: Projets
+        proposals_count: Propositions
+        results_count: Résultats
+        surveys_count: Enquêtes
+        users_count: Participants
+        votes_count: Votes
+      sub_hero:
+        register: S'inscrire
+  social_share_button:
+    delicious: Delicious
+    douban: Douban
+    email: Email
+    facebook: Facebook
+    google_bookmark: Google Bookmark
+    google_plus: Google+
+    hacker_news: Hacker News
+    linkedin: Linkedin
+    pinterest: Pinterest
+    qq: Qzone
+    reddit: Reddit
+    share_to: Partager sur %{name}
+    tumblr: Tumblr
+    twitter: Gazouillement
+    vkontakte: Vkontakte
+    wechat: WeChat
+    wechat_footer: Ouvrez WeChat, cliquez sur le bouton "Découvrir" puis cliquez sur le menu "Scanner le QR Code".
+    weibo: Sina Weibo
+    xing: Xing
+  views:
+    pagination:
+      first: "&laquo; Première"
+      last: Dernière &raquo;
+      next: Suivant &rsaquo;
+      previous: "&lsaquo; Précédent"
+      truncate: "&hellip;"

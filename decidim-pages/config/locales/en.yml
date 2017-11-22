@@ -1,0 +1,23 @@
+---
+en:
+  decidim:
+    features:
+      pages:
+        name: Page
+        settings:
+          global:
+            announcement: Announcement
+          step:
+            announcement: Announcement
+    pages:
+      admin:
+        models:
+          components:
+            body: Body
+        pages:
+          edit:
+            save: Update
+            title: Edit page
+          update:
+            invalid: There's been errors when saving the page.
+            success: Page saved successfully.

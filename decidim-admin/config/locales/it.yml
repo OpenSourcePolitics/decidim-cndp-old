@@ -1,0 +1,468 @@
+it:
+  activemodel:
+    attributes:
+      attachment:
+        description: Descrizione
+        file: File
+        title: Titolo
+      category:
+        description: Descrizione
+        name: Nome
+        parent_id: Su
+      feature:
+        name: Nome
+        weight: Peso
+      newsletter:
+        body: Testo
+        subject: Oggetto
+      organization:
+        default_locale: Lingua predefinita
+        name: Nome
+        reference_prefix: Prefisso
+      organization_appearance:
+        cta_button_path: Percorso del pulsante di chiamata all'azione
+        cta_button_text: Testo del pulsante di chiamata a azione
+        description: Descrizione
+        favicon: Icona
+        header_snippets: Cricchetti dell'intestazione
+        homepage_image: immagine per la Homepage
+        logo: Logo
+        official_img_footer: Logo ufficiale a piè pagina
+        official_img_header: Logo ufficiale per l'intestazione
+        official_url: URL dell'organizzazione ufficiale
+        show_statistics: Mostra statistiche
+        welcome_text: Testo di benvenuto
+      scope:
+        code: Codice
+        name: Nome
+        organization: Organizzazione
+        scope_type: Tipo di campo
+      scope_type:
+        name: Nome
+        organization: Organizzazione
+        plural: Plurale
+      static_page:
+        content: Contenuto
+        organization: Organizzazione
+        slug: URL slug
+        title: Titolo
+  activerecord:
+    attributes:
+      decidim/participatory_process:
+        banner_image: Immagine banner
+        description: Descrizione
+        developer_group: Gruppo di sviluppo
+        domain: Dominio
+        end_date: Data di fine
+        hashtag: hashtag
+        hero_image: Immagine sulla Home Page
+        local_area: Area locale
+        meta_scope: Metadati di ambito
+        participatory_scope: Visibilità/ambito partecipativo
+        participatory_structure: Struttura partecipativa
+        promoted: Promossa
+        scope: Visibilità/ambito
+        short_description: Descrizione breve
+        slug: URL slug
+        start_date: Date di inizio
+        subtitle: Sottotitolo
+        target: Bersaglio
+        title: Titolo
+      decidim/participatory_process_group:
+        description: Descrizione
+        hero_image: Immagine sulla Home Page
+        name: Nome
+        participatory_processes: Processi partecipativi
+      decidim/participatory_process_step:
+        end_date: Data di fine
+        start_date: Date di inizio
+      decidim/static_page:
+        content: Contenuto
+        slug: URL slug
+        title: Titolo
+  date:
+    formats:
+      datepicker: "%m / %d / %Y"
+  decidim:
+    admin:
+      actions:
+        add: Aggiungi
+        browse: Naviga
+        export: Esporta
+        manage: Gestisci
+        permissions: Permessi
+        reject: Rifiutare
+        verify: Verifica
+      attachments:
+        create:
+          error: Si è verificato un errore creando il nuovo allegato.
+          success: Allegato creato con successo.
+        destroy:
+          success: Allegato eliminato con successo.
+        edit:
+          title: Modifica allegato
+          update: Aggiorna
+        index:
+          attachments_title: Allegati
+        new:
+          create: Crea allegato
+          title: Nuovo allegato
+        update:
+          error: Si è verificato un errore durante l'aggiornamento di questo allegato.
+          success: Allegato modificato con successo.
+      categories:
+        create:
+          error: Si è verificato un errore durante la creazione di questa categoria.
+          success: OK, la categoria è stata creata.
+        destroy:
+          error: Si è verificato un errore durante la cancellazione di questa categoria. Assicurarsi di aver cancellato prima di tutto le eventuali sotto-categorie, assicurarsi che nessuna altra entità appartengaa questa categoria e provare di nuovo.
+          success: OK, categoria cancellata.
+        edit:
+          title: Modifica categoria
+          update: Aggiorna
+        index:
+          categories_title: Categorie
+          category_used: Questa categoria non può essere rimossa perché è in uso.
+        new:
+          create: Crea nuova categoria
+          title: Nuova categoria
+        update:
+          error: Si è verificato un errore aggiornando questa categoria.
+          success: OK, la categoria è stata aggiornata.
+      dashboard:
+        show:
+          welcome: Benvenuto nel nuovo pannello di amministarzione.
+      exports:
+        export_as: "%{name} esporta come %{export_format}"
+        notice: Export in fase di elaborazione.  Riceverai un'email quando l'export sarà terminato.
+      feature_permissions:
+        edit:
+          everyone: Tutti
+          submit: Salva la configurazione dei permessi
+          title: Modifica i permessi
+        update:
+          success: OK, i permessi sono stati aggiornati.
+      features:
+        create:
+          error: Si è verificato un errore durante l'aggiunta di questa funzionalità (feature).
+          success: OK, la feature è stata creata.
+        destroy:
+          error: Si è verificato un errore durante l'eliminazione di questa funzionalità (feature).
+          success: OK, la feature è stata cancellata.
+        edit:
+          title: Modifica feature
+          update: Aggiorna
+        form:
+          default_step_settings: Impostazioni del passo predefinite
+          global_settings: Impostazioni globali
+          step_settings: Imposta le fasi (Step)
+        index:
+          add: Aggiungi una funzionalità (feature)
+          headers:
+            actions: Azioni
+            name: Nome della funzionalità (feature)
+            type: Tipo di funzionalità (feature)
+        new:
+          add: Aggiungi una funzionalità (feature)
+          title: 'Aggiungi la feature: %{name}'
+        publish:
+          success: OK, la feature è stata pubblicata.
+        title: Funzionalità (features)
+        unpublish:
+          success: OK, questa feature adesso non è più pubblicata.
+        update:
+          error: Si è verificato un errore durante l'aggiornamento di questa funzionalità (feature).
+          success: OK, la funzionalità (feature) è stata aggiornata.
+      managed_users:
+        close_session:
+          error: Si è verificato un errore durante la chiusura della sessione di impersonazione corrente.
+          success: La sessione di impersonazione corrente è stata terminata con successo.
+        create:
+          error: Si è verificato un errore durante la creazione dell'utente gestito.
+          success: L'utente gestito è stato creato con successo.
+        form:
+          name: Nome
+        impersonate:
+          error: Si è verificato un errore che impersonava l'utente gestito.
+        impersonations:
+          new:
+            impersonate: Impersonare
+            new_managed_user_impersonation: Nuova rappresentazione utente gestita
+        index:
+          impersonate: Impersonare
+          needs_authoriation_warning: Hai bisogno di almeno un'autorizzazione abilitata per questa organizzazione.
+          promote: Promuovere
+          view_logs: Visualizza i registri
+        new:
+          create: Crea
+          new_managed_user: Nuovo utente gestito
+          select_authorization_method: Selezionare un metodo di autorizzazione
+          step: Fase %{current} di %{total}
+        promotion:
+          error: Si è verificato un errore che ha promosso l'utente gestito.
+          success: L'utente gestito è stato promosso con successo.
+        promotions:
+          new:
+            explanation: Gli utenti gestiti possono essere promossi agli utenti standard. Significa che saranno invitati all'applicazione e non sarete in grado di repersonarli nuovamente. L'utente invitato riceverà un'email per accettare l'invito.
+            new_managed_user_promotion: Nuova promozione degli utenti gestiti
+            promote: Promuovere
+      menu:
+        admins: Amministratori
+        appearance: Aspetto
+        configuration: Configurazione
+        dashboard: Cruscotto (Dashboard)
+        managed_users: Utenti gestiti
+        newsletters: Newsletters
+        scope_types: Tipi di ambito
+        scopes: Visibilità/ambito (Scopes)
+        settings: Impostazioni
+        static_pages: Pagine
+        user_groups: Gruppi di utenti
+        users: Utenti
+      models:
+        attachment:
+          fields:
+            content_type: Tipo
+            title: Titolo
+          name: Allegato
+        category:
+          name: Categorie
+        impersonation_log:
+          fields:
+            admin: Amministratore
+            ended_at: Terminato a
+            expired_at: Scaduto a
+            started_at: Ha iniziato a
+            user: Utente
+        managed_user:
+          name: Utente gestito
+        newsletter:
+          fields:
+            created_at: Creato il
+            progress: Avanzamento
+            sent_at: Inviato alle
+            subject: Oggetto
+          name: notiziario
+        scope:
+          fields:
+            name: Nome
+            scope_type: Tipo di campo
+        scope_type:
+          fields:
+            name: Nome
+            plural: Plurale
+        static_page:
+          fields:
+            created_at: Creato il
+            title: Titolo
+        user:
+          fields:
+            created_at: Data di creazione
+            email: E-mail
+            last_sign_in_at: Data dell'ultimo accesso
+            name: Nome
+            role: Ruolo
+            roles:
+              admin: Amministratore
+              user_manager: Gestore utente
+          name: Utente
+        user_group:
+          fields:
+            actions: Azioni
+            created_at: Creato il
+            document_number: Numero del documento
+            name: Nome
+            phone: Telefono
+            state: Stato
+            users_count: Conteggio degli utenti
+      moderations:
+        index:
+          title: Moderazione
+        report:
+          reasons:
+            does_not_belong: Non appartiene
+            offensive: Offensivo
+            spam: Spam
+      newsletters:
+        create:
+          error: Si è verificato un errore durante la creazione di questa newsletter.
+          success: OK, la Newsletter è stata creata. Adesso è possibile controllarla ed eventualmente inviarla.
+        deliver:
+          error: Si è verificato un errore durante l'invio di questa newsletter.
+          success: La newsletter è stata inviata con successo.
+        destroy:
+          error_already_sent: 'Non è possibile eliminare questa newsletter: è già stata inviata.'
+          success: OK, la Newsletter è stata eliminata.
+        edit:
+          save_and_preview: Salva e vedi l'anteprima
+          title: Modifica la Newsletter
+        form:
+          interpolations_hint: 'Suggerimento: puoi utilizzare "%{name}" ovunque nel corpo del testo  o nell''oggetto e sarà sostituito con il nome del contenitore.'
+        index:
+          confirm_delete: Sei sicuro di voler cancellare questa newsletter?
+          title: Newsletters
+        new:
+          save: Salva
+          title: Nuova newsletter
+        show:
+          confirm_deliver: Sei certo di voler inviare questa Newsletter?  Questa azione sarà irrevocabile.
+          deliver: Invia la newsletter
+          preview: Anteprima
+          subject: Oggetto
+        update:
+          error: Si è verificato un errore durante l'aggiornamento di questa newsletter.
+          success: OK, la Newsletter è stata aggiornata. Conviene controllarla prima di inviarla.
+      organization:
+        edit:
+          title: Modifica l'organizzazione
+          update: Modifica
+        form:
+          facebook: Facebook
+          github: GitHub
+          instagram: Instagram
+          social_handlers: Sociale
+          twitter: cinguettio
+          url: URL
+          youtube: Youtube
+        update:
+          error: Si è verificato un errore durante la modifica di questa organizzazione.
+          success: OK, l'organizzazione è stata modificata.
+      organization_appearance:
+        edit:
+          update: Modifica
+        form:
+          cta_button_path_help: 'Puoi sovrascrivere dove il pulsante Call To Action nella home page è collegato. Utilizza i percorsi parziali e non gli URL completi qui. Accetta lettere, numeri, trattini e barre, e deve iniziare con una lettera. Il pulsante Chiamata all''azione è mostrato nella homepage tra il testo di benvenuto e la descrizione. Esempio: %{url}'
+          cta_button_text_help: Puoi sovrascrivere il testo del pulsante Chiamata a azione nella home page per ogni lingua disponibile nell'organizzazione. Se non è impostato, verrà utilizzato il valore predefinito. Il pulsante Chiamata all'azione è mostrato nella homepage tra il testo di benvenuto e la descrizione.
+          header_snippets_help: Utilizza questo campo per aggiungere le cose alla testa HTML. L'uso più comune è quello di integrare i servizi di terze parti che richiedono JavaScript o CSS extra. Inoltre, è possibile utilizzarlo per aggiungere meta tag extra all'HTML. Tieni presente che questo sarà reso solo nelle pagine pubbliche, non nella sezione admin.
+          homepage_appearance_title: Modifica l'aspetto della home page
+          layout_appearance_title: Modifica aspetto del layout
+      scope_types:
+        create:
+          error: Si è verificato un errore durante la creazione di un nuovo tipo di ambito.
+          success: Tipo di ambito creato con successo.
+        destroy:
+          success: Tipo di ambito distrutto con successo
+        edit:
+          title: Modifica del tipo di ambito
+          update: Modifica
+        new:
+          create: Crea tipo di ambito
+          title: Nuovo ambito
+        update:
+          error: Si è verificato un errore durante l'aggiornamento di questo tipo di ambito.
+          success: Il tipo di ambito viene aggiornato correttamente
+      scopes:
+        create:
+          error: Si è verificato un errore creando un nuovo ambito.
+          success: OK, è stato creato il nuovo àmbito.
+        destroy:
+          success: Ok, l'ambito è stato eliminato.
+        edit:
+          title: Modifica l'àmbito
+          update: Aggiorna
+        new:
+          create: Crea un àmbito
+          title: Nuovo ambito
+        no_scopes: Nessun ambito a questo livello.
+        update:
+          error: Si è verificato un errore durante l'aggiornamento di questo àmbito.
+          success: OK, l'àmbito è stato aggiornato.
+      static_pages:
+        actions:
+          view: Visualizza la pagina pubblica
+        create:
+          error: Si è verificato un errore creando una nuova pagina.
+          success: OK, la nuova pagina è stata creata.
+        destroy:
+          success: OK, la pagina è stata eliminata.
+        edit:
+          title: Modifica la pagina
+          update: Aggiorna
+        new:
+          create: Nuovo
+          title: Nuova pagina
+        update:
+          error: Si è verificato un errore durante l'aggiornamento di questa pagina.
+          success: OK, la pagina è stata aggiornata.
+      titles:
+        dashboard: Cruscotto (Dashboard)
+        impersonations: impersonations
+        managed_users: Utenti gestiti
+        scope_types: Tipi di ambito
+        scopes: Ambiti
+        static_pages: Pagine
+        user_groups: Gruppi di utenti
+        users: Utenti
+      user_group:
+        reject:
+          invalid: Si è verificato un errore quando rifiuta questo gruppo di utenti.
+          success: Gruppo utenti rifiutato correttamente
+        verify:
+          invalid: Si è verificato un errore durante la verifica di questo gruppo di utenti.
+          success: Il gruppo utenti è stato verificato correttamente
+      user_groups:
+        index:
+          filter:
+            all: Tutto
+            pending: in attesa di
+            rejected: Rifiutata
+            verified: Verificato
+          filter_by: Filtra per
+          search: Cerca
+          state:
+            pending: in attesa di
+            rejected: Rifiutata
+            verified: Verificato
+      users:
+        create:
+          error: Si è verificato un errore cercando di mandare l'invito a questo utente.
+          success: OK, utente invitato.
+        destroy:
+          error: Si è verificato un errore cercando di eliminare questo utente.
+          success: Questo utente non è più un amministratore.
+        form:
+          email: E-mail
+          name: Nome
+          role: Ruolo
+        new:
+          create: Invita
+          title: Invita l'utente in qualità di amministratore
+    moderations:
+      actions:
+        hidden: Nascosto
+        hide: Nascondi
+        not_hidden: Non nascosto
+        title: Azioni
+        unreport: Non inserire
+      admin:
+        reportable:
+          hide:
+            invalid: Si è verificato un problema cercando di nascondere la risorsa.
+            success: OK, la risorsa è stata nascosta.
+          unreport:
+            invalid: Si è verificato un problema cercando di visualizzare la risorsa .
+            success: OK, la risorda è visualizzabile.
+      models:
+        moderation:
+          fields:
+            hidden_at: Nascosto a
+            report_count: Conteggio
+            reportable: Inseribile
+            reported_content_url: URL del contenuto riportato
+            reports: Report
+  errors:
+    messages:
+      invalid_json: Problemi con la trasmissione tramite JSON (JSON non valido)
+  layouts:
+    decidim:
+      admin:
+        newsletters:
+          title: Newsletters
+        settings:
+          title: Impostazioni
+        users:
+          title: Utenti
+  time:
+    formats:
+      datepicker: "%m / %d / %Y"
+      timepicker: "%m / %d / %Y %H:%M"

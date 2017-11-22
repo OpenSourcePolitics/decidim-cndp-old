@@ -1,0 +1,36 @@
+# frozen_string_literal: true
+
+FactoryGirl.define do
+  factory :surveys_feature, parent: :feature do
+    name { Decidim::Features::Namer.new(participatory_space.organization.available_locales, :surveys).i18n_name }
+    manifest_name :surveys
+    participatory_space { create(:participatory_process, :with_steps) }
+  end
+
+  factory :survey, class: Decidim::Surveys::Survey do
+    title { Decidim::Faker::Localized.sentence }
+    description do
+      Decidim::Faker::Localized.wrapped("<p>", "</p>") do
+        Decidim::Faker::Localized.sentence(4)
+      end
+    end
+    tos { Decidim::Faker::Localized.sentence(4) }
+    feature { build(:surveys_feature) }
+  end
+
+  factory :survey_question, class: Decidim::Surveys::SurveyQuestion do
+    body { Decidim::Faker::Localized.sentence }
+    mandatory false
+    position 0
+    question_type Decidim::Surveys::SurveyQuestion::TYPES.first
+    answer_options []
+    survey
+  end
+
+  factory :survey_answer, class: Decidim::Surveys::SurveyAnswer do
+    body { Decidim::Faker::Localized.sentence }
+    survey
+    question { create(:survey_question, survey: survey) }
+    user { create(:user, organization: survey.organization) }
+  end
+end

@@ -1,0 +1,70 @@
+fi:
+  decidim:
+    comments:
+      events:
+        comment_created:
+          comment:
+            email_intro: '"%{resource_title}" on kommentoinut. Voit lukea kommentin tällä sivulla:'
+            email_outro: Olet saanut tämän ilmoituksen, koska seuraat kohdetta "%{resource_title}". Voit lopettaa seurannan edellisestä linkistä.
+            email_subject: Uusi kommentti henkilöltä %{author_name} kohteeseen %{resource_title}
+            notification_title: Uusi kommentti henkilöltä %{author_name} kohteeseen <a href="%{resource_path}">%{resource_title}</a>
+          reply:
+            email_intro: Kohdetta "%{resource_title}" on kommentoitu
+            email_outro: Olet saanut tämän ilmoituksen, koska seuraat kohdetta "%{resource_title}". Voit lopettaa seuraamisen edellisestä linkistä.
+            email_subject: '%{author_name} on vastannut kommenttiisi kohteessa <a href="%{resource_url}">%{resource_title}</a>'
+            notification_title: '%{author_name} on vastannut kommenttiisi kohteessa <a href="%{resource_path}">%{resource_title}</a>'
+      votes:
+        create:
+          error: Äänestettäessä kommenttia tapahtui virhe.
+    components:
+      add_comment_form:
+        account_message: <a href="%{sign_in_url}">Kirjaudu tilillesi</a> tai <a href="%{sign_up_url}">kirjaudu</a> kommentoidaksesi.
+        form:
+          body:
+            label: Kommentti
+            placeholder: Mitä mieltä olet tästä?
+          form_error: Teksti vaaditaan ja se ei voi olla pidempi kuin %{length} merkkiä.
+          submit: Lähetä
+          user_group_id:
+            label: Kommentoi käyttäjänä
+        opinion:
+          neutral: Neutraali
+        remaining_characters: "%{count} merkkiä jäljellä"
+        remaining_characters_1: "%{count} merkki jäljellä"
+        title: Lisää kommenttisi
+      comment:
+        alignment:
+          against: Vastaan
+          in_favor: Puolesta
+        deleted_user: Poistettu käyttäjä
+        reply: Vastaa
+        report:
+          action: Raportoi
+          already_reported: Tämä sisältö on jo raportoitu ja ylläpitäjä tutkii sen.
+          close: Sulje
+          description: Onko tämä sisältö epäasiallista?
+          details: Lisätiedot
+          reasons:
+            does_not_belong: Sisältää laitonta toimintaa, itsemurhauhkailua, henkilökohtaisia tietoja tai jotain muuta, jonka et usko kuuluvan organisaatioon %{organization_name}.
+            offensive: Sisältää rasismia, seksismiä, haukkumista, henkilökohtaisia hyökkäyksiä, tappouhkauksia, itsemurhapyyntöjä tai muuta vihapuhetta.
+            spam: Sisältää klikkihoukutteita, mainostusta, huijauksia tai bottiskriptejä.
+          title: Raportoi ongelmasta
+        verified_user_group: Vahvistettu organisaatio
+      comment_order_selector:
+        order:
+          best_rated: Parhaiksi arvioidut
+          most_discussed: Eniten keskustelua herättäneet
+          older: Vanhemmat
+          recent: Uusimmat
+        title: 'Järjestä tulokset:'
+      comment_thread:
+        title: Keskustelu henkilön %{authorName} kanssa
+      comments:
+        blocked_comments_warning: Kommentointi on estetty tämänhetkisessä vaiheessa, mutta voit lukea kommentteja aikaisemmista vaiheista.
+        loading: Ladataan kommentteja ...
+        title: "%{count} kommenttia"
+      featured_comment:
+        title: Esille nostettu kommentti
+  errors:
+    messages:
+      cannot_have_comments: ei voi sisältää kommentteja

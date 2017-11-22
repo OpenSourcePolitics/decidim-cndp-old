@@ -1,0 +1,9 @@
+pl:
+  decidim:
+    dummy:
+      admin:
+        exports:
+          dummies: Manekiny
+    resource_links:
+      test_link:
+        dummy_resource_dummy: Podobne manekina

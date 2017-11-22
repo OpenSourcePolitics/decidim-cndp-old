@@ -1,0 +1,403 @@
+eu:
+  activemodel:
+    attributes:
+      account:
+        delete_reason: Zure kontua ezabatzeko arrazoia
+      report:
+        details: Iruzkin gehigarriak
+      user:
+        email: Zure helbide elektronikoa
+        name: Zure izena
+        password: Pasahitza
+        password_confirmation: Baieztatu zure pasahitz berria
+        remove_avatar: Kendu avatar-a
+        user_group_document_number: Egiaztagiri-zenbakia
+        user_group_name: Erakundearen izena
+        user_group_phone: Erakundearen telefonoa
+  activerecord:
+    attributes:
+      decidim/user:
+        current_password: Egungo pasahitza
+        email: Helbide elektronikoa
+        name: Erabiltzaile-izena
+        password: Pasahitza
+        password_confirmation: Baieztatu pasahitza
+        remember_me: Gogoratu
+        user_group_document_number: Egiaztagiri-zenbakia
+        user_group_name: Erakundearen izena
+        user_group_phone: Erakundearen telefonoa
+  booleans:
+    'false': 'Ez'
+    'true': 'Bai'
+  carrierwave:
+    errors:
+      image_too_big: Irudia pisuegia da
+  decidim:
+    account:
+      delete:
+        alert: Ekintza hau ezin da desegin. Zure kontua ezabatzen baduzu, ezin izango duzu saioa hasi.
+        confirm:
+          close: Itxi leihoa
+          ok: Bai, nire kontua ezabatu nahi dut
+          question: Ziur zure kontua ezabatu nahi duzula?
+          title: Ezabatu nire kontua
+        explanation: Mesedez, zure kontu ezabatu nahi izateko arrazoia azaldu (aukerakoa).
+      destroy:
+        error: Errore bat gertatu da zure kontua ezabatzean.
+        success: Zure kontua ezabatu egin da.
+      show:
+        change_password: Aldatu pasahitza
+        update_account: Eguneratu kontua
+      update:
+        error: Errorea gertatu da zure kontua eguneratzean.
+        success: Zure kontua zuzen eguneratu da.
+        success_with_email_confirmation: Zure kontua zuzen eguneratu da. Mezu elektroniko bat jasoko duzu zure helbide elektroniko berria baieztatzeko.
+    anonymous_user: Anonimoa
+    application:
+      documents:
+        related_documents: Honekin lotutako agiriak
+      photos:
+        related_photos: Honekin lotutako argazkiak
+    authorization_handlers:
+      decidim/dummy_authorization_handler:
+        fields:
+          document_number: Agiri-zenbakia
+          postal_code: Posta-kodea
+        name: baimen-adibidea
+      errors:
+        duplicate_authorization: Badago erabiltzaile bat, datu berberekin baimendua.
+      foo_authorization:
+        fields:
+          bar: Bar
+          foo: foo
+        name: foo baimena
+    authorizations:
+      create:
+        error: Errorea gertatu da baimena sortzean.
+        success: Baimendua izan zara zuzen.
+      first_login:
+        actions:
+          decidim/dummy_authorization_handler: 'Egiaztatu baimen-adibidea honekin erkatuta:'
+        title: Egiaztatu zure nortasuna
+        verify_with_these_options: 'Hona zure nortasuna egiaztatzeko dituzun aukerak:'
+      new:
+        authorize: Bidali
+        authorize_with: 'Egiaztatu nire nortasuna honen bidez: %{authorizer}'
+      skip_verification: Oraingoz, urrats hau egin gabe utzi dezakezu eta %{link}
+      start_exploring: Hasi esploratzen
+    core:
+      actions:
+        unauthorized: Ez duzu baimenik ekintza honi heltzeko.
+    devise:
+      omniauth_registrations:
+        create:
+          email_already_exists: Beste kontu batek erabiltzen du helbide elektroniko bera.
+        new:
+          complete_profile: Osatu profila
+          sign_up: Mesedez, osatu zure profila
+          subtitle: Mesedez, bete inprimaki hau izen-ematea osatzeko
+          username_help: Izen publikoa, zuk argitaratutakoetan agertzekoa. Anonimatua bermatze aldera, edozein izen izan daiteke.
+      registrations:
+        new:
+          already_have_an_account?: Baduzu kontu bat?
+          newsletter_notifications: Informazio eskuratzeko garrantzizko jarduerari buruz
+          sign_in: Sartu
+          sign_up: Erregistratu
+          sign_up_as:
+            legend: Izena eman honako hau gisa
+            user: Banakoa
+            user_group: Erakundea / Kolektiboa
+          subtitle: Sortu kontu bat eztabaidetan parte hartzeko eta proposamenen alde egiteko
+          terms: erabilera-baldintzak
+          tos_agreement: 'Erregistratzean hau onartzen duzu: %{link}.'
+          username_help: Izen publikoa, zure mezuetan agertzekoa Anonimatua bermatze aldera, edozein izen izan daiteke.
+      sessions:
+        new:
+          are_you_new?: Berria zara plataforman?
+          register: Sortu zure kontua
+      shared:
+        omniauth_buttons:
+          or: Edo
+    errors:
+      internal_server_error:
+        title: Arazo bat izan da gure zerbitzariarekin
+        try_later: Mesedez beranduago saiatu.
+      not_found:
+        back_home: Itzuli hasierara
+        content_doesnt_exist: Helbide hau okerra da edo ezabatua izan da.
+        title: Ez dugu aurkitu bilatzen duzun orria!
+    events:
+      email_event:
+        email_greeting: Kaixo, %{user_name},
+        email_intro: 'Eguneratze da "%{resource_title}". Orri honetan ikus daiteke:'
+        email_outro: Jakinarazpen hau jaso duzu "%{resource_title}” jarraitzen duzulako. Jarraitzeari utzi diezaiokezu aurreko estekan.
+        email_subject: '%{resource_title} eguneratzea'
+      notification_event:
+        notification_title: 'Gertaera bat gertatu da hemen: <a href="%{resource_path}">%{resource_title}</a>.'
+    export_mailer:
+      export:
+        ready: Atxikita aurkituko duzu zure esportazioaren bertsio trinkotua.
+      subject: Prest duzu "%{name}" izeneko esportazioa
+    features:
+      dummy:
+        actions:
+          bar: Bar
+          foo: foo
+        name: Funtzionaltasun-proba
+        settings:
+          global:
+            comments_enabled: Iruzkinak gaituta
+            dummy_global_attribute_1: Atributu-proba, 1
+            dummy_global_attribute_2: Atributu-proba, 2
+          step:
+            comments_blocked: Iruzkinak blokeatuta
+            dummy_step_attribute_1: Atributu-faseko proba, 1
+            dummy_step_attribute_2: Atributu-faseko proba, 2
+    filters:
+      linked_classes:
+        all: Guztiak
+        dummyresource: Dummy baliabideak
+        meeting: Topaketa-zerrenda
+        project: Proiektuak
+        proposal: Proposamenak
+        result: Emaitzak
+    follows:
+      create:
+        button: Jarraitu
+        error: Errorea gertatu da baliabide hau jarraitzeari uztean.
+      destroy:
+        button: Jarraitzeari utzi
+        error: Errorea gertatu da baliabide hau jarraitzeari uztean.
+    forms:
+      current_file: Oraingo fitxategia
+      current_image: Oraingo irudia
+      default_image: Irudi lehenetsia
+      errors:
+        error: Errorea bat dago eremu honetan.
+      remove_this_file: Ezabatu artxibo hau
+    managed_users:
+      expired_session: Ordezte-saio hau iraungi da.
+    menu:
+      home: Hasiera
+      more_information: Argibide gehiago
+    newsletter_mailer:
+      newsletter:
+        note: 'Mezu hau jaso duzu albiste-buletinean harpidetuta zaudelako hemen: %{organization_name}. Ezarpenak aldatu ditzakezu zure <a href="%{link}">jakinarazpen-orrian</a>.'
+    notifications_settings:
+      show:
+        email_on_notification: Mezu elektroniko bat jaso nahi dut jakinarazpen bat jasotzen dudan bakoitzean.
+        newsletter_notifications: Informazioa jaso nahi dut garrantzizko jarduerari buruz
+        update_notifications_settings: Gorde aldaketak
+      update:
+        error: Errore bat gertatu da jakinarazpenen konfigurazioa eguneratzean.
+        success: Jakinarazpenen konfigurazioa zuzen eguneratu da.
+    own_user_groups:
+      index:
+        pending: Zain
+        rejected: Ukatua
+        verified: Egiaztatuta
+    pages:
+      index:
+        title: Argibide gehiago
+    reported_mailer:
+      hide:
+        hello: Kaixo, %{name},
+        manage_moderations: Kudeatu moderazioak
+        report_html: <p>Hurrengo <a href="%{url}">edukia</a>automatikoki ezkutatu da</p>
+        subject: Eduki bat automatikoki ezkutatu da
+      report:
+        hello: Kaixo, %{name},
+        manage_moderations: Kudeatu moderazioak
+        report_html: <p>Hurrengo <a href="%{url}">edukia</a>zalatua izan da.</p>
+        subject: Eduki bat salatua izan da
+    reports:
+      create:
+        error: Errorea gertatu da edukia salatzean. Mesedez, saiatu berriro.
+        success: Salaketa zuzen sortu da, eta administratzaile batek aztertuko du.
+    shared:
+      action_authorization_modal:
+        incomplete:
+          cancel: Utzi
+          explanation: 'Nahiz eta orain baimenduta zauden honako "%{authorization}” honen bidez, behar dugu zuk berriz baimena eskuratzea, ez baititugu honako datu hauek:'
+          reauthorize: Berriz eskuratu baimena
+          title: Mesedez, eskura ezazu berriz baimena
+        missing:
+          authorize: 'Baimena eskuratu honen bidez: "%{authorization}"'
+          explanation: 'Ekintza hau egiteko, baimen hau behar duzu: "%{authorization}".'
+          title: Baimena behar da
+        unauthorized:
+          explanation: Ezin diozu heldu ekintza honi, baimen-datuetako batzuk ez direlako behar direnak.
+          invalid: "%{field} ez da baliozkoa."
+          ok: Ados
+          title: Ez dago baimenduta
+      embed_modal:
+        close_window: Itxi leihoa
+        embed: Mesedez, erantsi kode hau zure orrian
+        embed_link: Kapsulatu
+      flag_modal:
+        already_reported: Eduki hau jada salatuta dago, eta administratzaile batek berrikusiko du.
+        close: Itxi
+        description: Eduki hau desegokia da?
+        does_not_belong: Bertan badago legez kontrako jardunik, suizidio-mehatxurik, informazio pertsonalik edo beste zernahi, zure ustez %{organization_name}-ri ez dagokionik.
+        offensive: Bertan badago arrazakeriarik, sexismorik, irainik, eraso pertsonalik, heriotza-mehatxurik, suizidio-eskaerarik edo beste edozein eratako gorroto-diskurtsorik.
+        report: Txostena
+        spam: Bertan badago clickbait-ik, publizitaterik edo iruzurrik.
+        title: Salatu arazo bat
+      follow_button:
+        sign_in_before_follow: Hasi saioa ekintza hau burutu baino lehen
+      login_modal:
+        please_sign_in: Mesedez, erregistratu
+        sign_up: Erregistratu
+      reference:
+        reference: 'Erreferentzia: %{reference}'
+      results_per_page:
+        label: 'Emaitzak, orrialdeko:'
+      share_modal:
+        close_window: Itxi leihoa
+        share: Partekatu
+        share_link: Partekatu esteka
+  devise:
+    invitations:
+      edit:
+        header: Idatzi zure pasahitza
+        submit_button: Gorde
+    mailer:
+      invitation_instructions:
+        accept: Onartu gonbita
+        accept_until: 'Gonbit hau data honetan iraungiko da: %{due_date}.'
+        hello: Kaixo, %{email},
+        ignore: |-
+          Nahi ez baduzu onartu gonbit hau, ez egin kasu mezu honi.<br />Zure kontua ez da sortuko beheko estekara jo eta zure pasahitza aukeratu arte.
+        invited_you_as_admin: "%{invited_by} %{application} administratzaile gisa gonbidatu zaitu. Beheko estekan onartu dezakezu."
+        someone_invited_you: Norbaitek %{application} gonbidatu zaitu. Beheko estekan onartu dezakezu.
+        someone_invited_you_as_admin: Norbaitek %{application} admin gisa gonbidatu zaitu, beheko estekan onartu dezakezu.
+      invite_admin:
+        subject: 'Gonbita jaso duzu erakunde hau kudeatzeko: %{organization}'
+      invite_collaborator:
+        subject: 'Gonbita jaso duzu erakunde honekin lankidetzan aritzeko: %{organization}'
+      organization_admin_invitation_instructions:
+        subject: 'Gonbita jaso duzu erakunde hau kudeatzeko: %{organization}'
+      password_change:
+        greeting: Kaixo %{recipient}!
+        message: Zuregana jotzen dugu jakinarazteko zure pasahitza zuzen aldatu dela.
+        subject: Pasahitza aldatu da
+  errors:
+    messages:
+      content_type_whitelist_error: fitxategi mota ez da zuzena
+      cycle_detected: Esparruko guraso bat ezin da bere ondorengoetako bat izan
+      file_size_is_less_than_or_equal_to: fitxategiaren pisuak %{count} izan behar du, edo gutxiago
+      invalid_manifest: Manifestua ez da baliozkoa
+      invalid_participatory_process: Prozesu partizipatiboa ez da baliozkoa
+      long_words: Hitz luzeegiak ditu
+      must_start_with_caps: Letra larriz hasi behar du
+      nesting_too_deep: ezin da egon azpikategoria batean
+      too_many_marks: Galdera- eta harridura-ikur gehiegi erabiltzen ari zara
+      too_much_caps: Letra larri gehiegi erabiltzen ari zara
+      too_short: Laburregia da
+  forms:
+    required: Nahitaezkoa da
+  invisible_captcha:
+    sentence_for_humans: Gizaki bat bazara, ez egin kasu eremu honi
+    timestamp_error_message: Barkatu, baina azkarregi aritu zara! Mesedez, bidali.
+  layouts:
+    decidim:
+      cookie_warning:
+        description_html: 'Webgune honek bere cookieak eta hirugarrenenak erabiltzen ditu, nabigazioa hobetu eta intereseko edukiak eta zerbitzuak eskaintze aldera. Nabigatzen jarraituz gero, gure cookie-politika onartzen delakoan gaude. Argibide gehiago jasotzeko, kontsultatu hemen: %{link}.'
+        link_label: hemen
+        ok: Ados nago
+      footer:
+        made_with_open_source: 'Gune hau egiteko, <a target="_blank" href="https://github.com/decidim/decidim">software libre</a> erabili da.'
+      header:
+        close_menu: Itxi menua
+        navigation: Nabigazioa
+        sign_in: Sartu
+        sign_up: Erregistratu
+      impersonation_warning:
+        close_session: Itxi saioa
+        description_html: 'Honako erabiltzaile honen plantak egiten ari zara: <b>%{user_name}</b>.'
+        expire_time_html: Zure saioa iraungiko da <b><span class="minutes">%{minutes}</span>minutu barru</b>.
+      notifications_dashboard:
+        mark_all_as_read: Markatu dena irakurritako gisa
+        no_notifications: Oraindik ez dago jakinarazpenik.
+        title: jakinarazpenak
+      user_menu:
+        admin_dashboard: Administrazioko aginte-mahaia
+        notifications: jakinarazpenak
+        profile: Nire kontua
+        sign_out: Irten
+      user_profile:
+        account: Kontua
+        authorizations: Baimenak
+        delete_my_account: Ezabatu nire kontua
+        notifications_settings: Jakinarazpen-konfigurazioa
+        title: Erabiltzaile-ezarpenak
+        user_groups: Erakundeak
+      widget:
+        see_more: Ikusi gehiago
+  locale:
+    name: Euskera
+  pages:
+    home:
+      extended:
+        debates: Eztabaidak
+        debates_explanation: Debate eta eztabaidatu, partekatu zure iritziak eta gai garrantzitsuak aberasteko.
+        how_to_participate: Nola har dezaket parte prozesu batean?
+        meetings: Topaketa-zerrenda
+        meetings_explanation: Ezagutu non eta noiz bilera publikoetan parte har dezakezu.
+        more_info: Argibide gehiago
+        proposals: Proposamenak
+        proposals_explanation: Egin proposamenak, lehendik dauden laguntza eta ikusi nahi dituzun aldaketak sustatu.
+      footer_sub_hero:
+        footer_sub_hero_body: Bihurtu dezagun gizartea irekiago, gardenago eta kolaboratiboago <br /> Bat egin, parte hartu eta erabaki.
+        footer_sub_hero_headline: Ongi etorri %{organization} erakundearen plataforma partizipatibora.
+        register: Erregistroa
+      hero:
+        participate: Parte hartu
+        welcome: Ongi etorri %{organization} erakundera!
+      highlighted_processes:
+        active_processes: Prozesu aktiboak
+        active_step: Fase gaitua
+        see_all_processes: Ikusi prozesu guztiak
+      statistics:
+        answers_count: Erantzunak
+        comments_count: Iruzkinak
+        headline: '%{organization} erakundearen egungo egoera'
+        meetings_count: Topaketak
+        orders_count: Euskarriak
+        pages_count: Orriak
+        processes_count: Prozesuak
+        projects_count: Proiektuak
+        proposals_count: Proposamenak
+        results_count: Emaitzak
+        surveys_count: Inkestak
+        users_count: Parte-hartzaileak
+        votes_count: Botoak
+      sub_hero:
+        register: Erregistratu
+  social_share_button:
+    delicious: Delicious
+    douban: Douban
+    email: Helbide elektronikoa
+    facebook: Facebook
+    google_bookmark: Google Bookmark
+    google_plus: Google+
+    hacker_news: hacker News
+    linkedin: Linkedin
+    pinterest: Pinterest
+    qq: Qzone
+    reddit: Reddit
+    share_to: 'Partekatu honekin: %{name}'
+    tumblr: Tumblr
+    twitter: Twitter
+    vkontakte: Vkontakte
+    wechat: WeChat
+    wechat_footer: Ireki zure WeChat, egin klik "Discover" botoian, eta gero, egin klik berriro "Eskaneatu QR kodea” menuan.
+    weibo: Sina Weibo
+    xing: Xing
+  views:
+    pagination:
+      first: "&laquo; Lehena"
+      last: Azkena &raquo;
+      next: Hurrengoa &rsaquo;
+      previous: "&lsaquo; Aurrekoa"
+      truncate: "&hellip;"

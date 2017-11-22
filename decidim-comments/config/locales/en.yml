@@ -1,0 +1,71 @@
+---
+en:
+  decidim:
+    comments:
+      events:
+        comment_created:
+          comment:
+            email_intro: '"%{resource_title}" has been commented. You can read the comment in this page:'
+            email_outro: You have received this notification because you are following "%{resource_title}". You can unfollow it from the previous link.
+            email_subject: There is a new comment from %{author_name} in %{resource_title}
+            notification_title: There is a new comment from %{author_name} in <a href="%{resource_path}">%{resource_title}</a>
+          reply:
+            email_intro: The "%{resource_title}" has been commented
+            email_outro: You have received this notification because you are following "%{resource_title}". You can unfollow it from the previous link.
+            email_subject: There is a new reply of your comment from %{author_name} in <a href="%{resource_url}">%{resource_title}</a>
+            notification_title: There is a new reply of your comment from %{author_name} in <a href="%{resource_path}">%{resource_title}</a>
+      votes:
+        create:
+          error: There's been errors when voting the comment.
+    components:
+      add_comment_form:
+        account_message: <a href="%{sign_in_url}">Sign in with your account</a> or <a href="%{sign_up_url}">sign up</a> to add your comment.
+        form:
+          body:
+            label: Comment
+            placeholder: What do you think about this?
+          form_error: The text is required and it can't be longer than %{length} characters.
+          submit: Send
+          user_group_id:
+            label: Comment as
+        opinion:
+          neutral: Neutral
+        remaining_characters: "%{count} characters left"
+        remaining_characters_1: "%{count} character left"
+        title: Add your comment
+      comment:
+        alignment:
+          against: Against
+          in_favor: In favor
+        deleted_user: Deleted user
+        reply: Reply
+        report:
+          action: Report
+          already_reported: This content is already reported and it will be reviewed by an admin.
+          close: Close
+          description: Is this content inappropriate?
+          details: Additional comments
+          reasons:
+            does_not_belong: Contains illegal activity, suicide threats, personal information, or something else you think doesn't belong on %{organization_name}.
+            offensive: Contains racism, sexism, slurs, personal attacks, death threats, suicide requests or any form of hate speech.
+            spam: Contains clickbait, advertising, scams or script bots.
+          title: Report a problem
+        verified_user_group: Verified organization
+      comment_order_selector:
+        order:
+          best_rated: Best rated
+          most_discussed: Most discussed
+          older: Older
+          recent: Recent
+        title: 'Order by:'
+      comment_thread:
+        title: Conversation with %{authorName}
+      comments:
+        blocked_comments_warning: Comments are disabled in the current step, but you can read the comments from previous steps.
+        loading: Loading comments ...
+        title: "%{count} comments"
+      featured_comment:
+        title: Featured comment
+  errors:
+    messages:
+      cannot_have_comments: can't have comments

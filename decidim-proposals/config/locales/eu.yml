@@ -1,0 +1,177 @@
+eu:
+  activemodel:
+    attributes:
+      proposal:
+        body: Testua
+        category_id: Kategoria
+        scope_id: Esparrua
+        title: Titulua
+        user_group_id: 'Sortu proposamen bat honako hau gisa:'
+      proposal_answer:
+        answer: Erantzuna
+  decidim:
+    features:
+      proposals:
+        actions:
+          create: Sortu
+          vote: Proiektuaren alde egin
+        name: Proposamenak
+        settings:
+          global:
+            announcement: Oharra
+            attachments_allowed: Baimendu eranskinak
+            comments_enabled: Iruzkinak gaituta
+            geocoding_enabled: Geokodeketa gaituta
+            maximum_votes_per_proposal: Proposamen bakoitzeko gehienezko botoak
+            new_proposal_help_text: Laguntza-testua proposamen bat sortzean
+            official_proposals_enabled: Proposamen ofizialak gaituta
+            proposal_answering_enabled: Erantzuna aktibatutako proposamenei
+            proposal_limit: Proposamenaren muga erabiltzaile bakoitzeko
+            vote_limit: Erabiltzaile bakoitzari botoa emateko muga
+          step:
+            announcement: Oharra
+            comments_blocked: Iruzkinak blokeatuta
+            creation_enabled: Gaitu proposamenen sorrera
+            proposal_answering_enabled: Erantzun ofiziala gaitutako proposamenei
+            votes_blocked: Bozketa blokeatuta
+            votes_enabled: Botoak gaituta
+            votes_hidden: Boto ezkutuak (Botoak gaituta egon eta aukera hau markatuz gero, ezkutuan geldituko da botoen kopurua)
+    proposals:
+      actions:
+        answer: Erantzuna
+        new: Berria
+        title: Ekintzak
+      admin:
+        actions:
+          preview: Aurreikusi
+        exports:
+          comments: Iruzkinak
+          proposals: Proposamenak
+        models:
+          proposal:
+            name: Proposamena
+        proposal_answers:
+          edit:
+            accepted: Onartuta
+            answer_proposal: Erantzuna
+            evaluating: Ebaluatzen
+            rejected: Ukatua
+            title: 'Erantzun proposamen honi: %{title}'
+        proposals:
+          answer:
+            invalid: Arazo bat izan da proposamen honi erantzutean.
+            success: Proposamenari ongi erantzun zaio
+          create:
+            invalid: Arazo bat izan da proposamen hau sortzean.
+            success: Proposamena zuzen sortu da.
+          form:
+            attachment_legend: "(Aukerakoa) Gehitu eranskin bat"
+            select_a_category: Aukeratu kategoria bat
+          index:
+            title: Proposamenak
+          new:
+            create: Sortu
+            title: Sortu proposamena
+      answers:
+        accepted: Onartuta
+        evaluating: Ebaluatzen
+        not_answered: Erantzun gabe
+        rejected: Ukatua
+      create:
+        error: Erroreak gertatu dira proposamena gordetzean.
+        success: Proposamena zuzen sortu da.
+      models:
+        proposal:
+          fields:
+            category: Kategoria
+            id: NORTASUN AGIRIA
+            official_proposal: Proposamen ofiziala
+            scope: Esparrua
+            state: Egoera
+            title: Titulua
+            votes: Euskarriak
+      new:
+        limit_reached: Ezin duzu proposamen berririk sortu muga gainditu zenuenetik.
+      proposal_votes:
+        create:
+          error: Erroreak gertatu dira proposamena bozkatzean.
+      proposals:
+        author:
+          deleted: Erabiltzaile ezabatua
+          verified_user_group: Egiaztatutako erakundea
+        count:
+          proposals_count:
+            one: 1 proposamen
+            other: "%{count} proposamen"
+        filters:
+          accepted: Onartuta
+          activity: Jarduera
+          all: Guztiak
+          category: Kategoria
+          category_prompt: Aukeratu kategoria bat
+          citizens: Hiritarrak
+          evaluating: Ebaluatzen
+          official: Ofiziala
+          origin: Jatorria
+          rejected: Ukatua
+          related_to: Honekin lotuta
+          scope_prompt: Aukeratu esparru bat
+          scopes: Esparruak
+          search: Bilatu
+          state: Egoera
+          voted: Bozkatuta
+        filters_small_view:
+          close_modal: Itxi leihoa
+          filter: Iragazi
+          filter_by: 'Iragazi honen arabera:'
+          unfold: Zabaldu
+        index:
+          new_proposal: Proposamen berria
+          proposal_limit_reached: Proposatutako mugara iritsi da
+          view_proposal: Ikusi proposamena
+        linked_proposals:
+          proposal_votes:
+            one: <span class="card--list__data__number">1</span>boto
+            other: <span class="card--list__data__number">%{count}</span>boto
+        new:
+          attachment_legend: "(Aukerakoa) Gehitu eranskin bat"
+          back: Atzera
+          select_a_category: Mesedez, aukeratu kategoria bat
+          send: Bidali
+          title: Proposamen berria
+        orders:
+          label: 'Antolatu proposamenak honen arabera:'
+          most_voted: Bozkatuenak
+          random: Ausazkoa eran
+          recent: Berrienak
+        proposal:
+          view_proposal: Ikusi proposamena
+        show:
+          proposal_accepted_reason: 'Proposamen hau onartu da arrazoi hauengatik:'
+          proposal_in_evaluation_reason: Proposamen hau ebaluatzen ari da
+          proposal_rejected_reason: 'Proposamen hau baztertu da arrazoi hauengatik:'
+          report: Salatu
+        vote_button:
+          already_voted: Bozkatuta duzu
+          maximum_votes_reached: Vote muga iritsi da
+          no_votes_remaining: Ez da gelditzen botorik
+          vote: Proiektuaren alde egin
+          votes_blocked: Bozketa desaktibatu da
+        votes_count:
+          count:
+            one: SOSTENGU
+            other: SOSTENGU
+        voting_rules:
+          maximum_votes_per_proposal:
+            description: Proposamen bakoitzak gehienez %{limit} boto jaso ditzake.
+          proposal_limit:
+            description: '%{limit} proposamen sortu ditzakezu.'
+          title: 'Botoak honako arauak ditu:'
+          vote_limit:
+            description: '%{limit} proposamenari bozkatu ahal zaizkio.'
+            left: Emateke
+            votes: Euskarriak
+    resource_links:
+      included_proposals:
+        proposal_projects: 'Proiektu hauetatik sortutako proposamena:'
+        proposal_results: 'Emaitza hauetatik sortutako proposamena:'

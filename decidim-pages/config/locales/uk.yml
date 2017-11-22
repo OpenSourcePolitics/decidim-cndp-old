@@ -1,0 +1,22 @@
+uk:
+  decidim:
+    features:
+      pages:
+        name: Сторінка
+        settings:
+          global:
+            announcement: Оголошення
+          step:
+            announcement: Оголошення
+    pages:
+      admin:
+        models:
+          components:
+            body: Основний текст
+        pages:
+          edit:
+            save: Оновити
+            title: Редагувати сторінку
+          update:
+            invalid: При збереженні цієї сторінки сталися помилки.
+            success: Сторінку успішно збережено.

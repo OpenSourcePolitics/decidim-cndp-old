@@ -1,0 +1,71 @@
+---
+ca:
+  decidim:
+    comments:
+      events:
+        comment_created:
+          comment:
+            email_intro: 'S''ha comentat "%{resource_title}". Pots llegir-lo en aquesta pàgina:'
+            email_outro: Has rebut aquesta notificació perquè que segueixes "%{resource_title}". El pots deixar de seguir al link anterior.
+            email_subject: Hi ha un nou comentari de %{author_name} a %{resource_title}
+            notification_title: Hi ha un nou comentari de %{author_name} a <a href="%{resource_path}">%{resource_title}</a>
+          reply:
+            email_intro: S'ha comentat "%{resource_title}"
+            email_outro: Has rebut aquesta notificació perquè que segueixes "%{resource_title}". El pots deixar de seguir al link anterior.
+            email_subject: Hi ha una nova resposta del vostre comentari de %{author_name} a <a href="%{resource_url}">%{resource_title}</a>
+            notification_title: Hi ha una nova resposta del teu comentari de %{author_name} a <a href="%{resource_path}">%{resource_title}</a>
+      votes:
+        create:
+          error: Hi ha hagut errors en votar el comentari.
+    components:
+      add_comment_form:
+        account_message: <a href="%{sign_in_url}">Inicia la sessió amb el teu compte</a> o <a href="%{sign_up_url}">registra't</a> per afegir el teu comentari.
+        form:
+          body:
+            label: Comentari
+            placeholder: Què en penses d'això?
+          form_error: El text és necessari i no pot ser més llarg de %{length}
+          submit: Envia
+          user_group_id:
+            label: Comentar com a
+        opinion:
+          neutral: Neutral
+        remaining_characters: Queden %{count} caràcters
+        remaining_characters_1: Queda %{count} caràcter
+        title: Deixa el teu comentari
+      comment:
+        alignment:
+          against: En contra
+          in_favor: A favor
+        deleted_user: Usuari eliminat
+        reply: Respondre
+        report:
+          action: Denuncia
+          already_reported: Aquest contingut ja ha estat denunciat i serà revisat per un administrador.
+          close: Tancar
+          description: Aquest contingut no és apropiat?
+          details: Comentaris addicionals
+          reasons:
+            does_not_belong: Conté activitat il·legal, amenaces de suïcidi, informació personal, o qualsevol altra cosa que creguis que no pertany a %{organization_name}.
+            offensive: Conté racisme, sexisme, insults, atacs personals, amenaces de mort, peticions de suïcidi o qualsevol forma de discurs d'odi.
+            spam: Conté "clickbait", publicitat o estafes.
+          title: Denuncia un problema
+        verified_user_group: Organització verificada
+      comment_order_selector:
+        order:
+          best_rated: Més ben valorats
+          most_discussed: Més discutit
+          older: Més antic
+          recent: Recent
+        title: 'Ordenar per:'
+      comment_thread:
+        title: Conversa amb %{authorName}
+      comments:
+        blocked_comments_warning: Els comentaris estan desactivats a la fase actual però pots llegir els comentaris de les fases anteriors.
+        loading: Carregant els comentaris ...
+        title: "%{count} comentaris"
+      featured_comment:
+        title: Comentari destacat
+  errors:
+    messages:
+      cannot_have_comments: no pot tenir comentaris

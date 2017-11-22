@@ -1,0 +1,134 @@
+ru:
+  activemodel:
+    attributes:
+      assembly:
+        banner_image: Изображение баннера
+        copy_categories: Скопировать категории
+        copy_features: Копировать составляющие
+        description: Описание
+        developer_group: Группа разработчиков
+        domain: Домен
+        hashtag: Хэштег
+        hero_image: Изображение главной страницы
+        local_area: Местность
+        meta_scope: Метаданные охвата
+        participatory_scope: Охват соучастия
+        participatory_structure: Структура соучастия
+        promoted: Рекламируется
+        scope_id: Охват
+        scopes_enabled: Охваты включены
+        short_description: Краткое описание
+        slug: Сокращенный URL-адрес
+        subtitle: Подзаголовок
+        target: Цель
+        title: Название
+  decidim:
+    admin:
+      assemblies:
+        create:
+          error: При добавлении нового собрания произошла ошибка.
+          success: Собрание успешно добавлено.
+        destroy:
+          success: Собрание успешно удалено.
+        edit:
+          update: Обновить
+        form:
+          title: Общая информация
+        index:
+          not_published: Не опубликовано
+          published: Опубликовано
+        new:
+          create: Добавить
+          title: Новое собрание
+        update:
+          error: При обновлении этого собрания произошла ошибка.
+          success: Собрание успешно обновлено.
+      assemblies_copies:
+        create:
+          error: При создании копии этого собрания произошла ошибка.
+          success: Успешно создана копия собрания.
+      assembly_copies:
+        new:
+          copy: Копировать
+          select: Выберите, какие данные вы хотите продублировать
+          title: Создать копию собрания
+      assembly_publications:
+        create:
+          error: При публикации этого собрания произошла ошибка.
+          success: Собрание успешно опубликовано.
+        destroy:
+          error: При отмене публикации этого собрания произошла ошибка.
+          success: Публикация собрания успешно отменена.
+      menu:
+        assemblies: Собрания
+        assemblies_submenu:
+          attachments: Вложения
+          categories: Категории
+          features: Составляющие
+          info: Информация
+          moderations: Действия по модерации
+      models:
+        assembly:
+          fields:
+            created_at: 'Добавлено:'
+            promoted: Выдвинутые на первый план
+            published: Опубликовано
+            title: Название
+          name: Собрание
+      titles:
+        assemblies: Собрания
+    assemblies:
+      admin:
+        assemblies:
+          form:
+            slug_help: 'Сокращенные URL-адреса используются для создания ссылок на это собрание. В них допустимы только буквы, цифры и тире, и они должны начинаться с буквы. Пример: %{url}'
+        assembly_copies:
+          form:
+            slug_help: 'Сокращенные URL-адреса используются для создания ссылок на это собрание. В них допустимы только буквы, цифры и тире, и они должны начинаться с буквы. Пример: %{url}'
+      index:
+        title: Собрания
+      show:
+        developer_group: Группа разработчиков
+        local_area: Местность
+        participatory_scope: Охват соучастия
+        participatory_structure: Структура соучастия
+        scope: Охват
+        target: Цель
+      statistics:
+        answers_count: Ответы
+        assemblies_count: Собрания
+        comments_count: Комментарии
+        headline: Деятельность
+        meetings_count: Встречи
+        orders_count: Голоса
+        pages_count: Страницы
+        projects_count: Проекты
+        proposals_count: Предложения
+        results_count: Итоги
+        surveys_count: Опросы
+        users_count: Участники
+        votes_count: Голоса
+    menu:
+      assemblies: Собрания
+  layouts:
+    decidim:
+      assemblies:
+        assembly:
+          take_part: Принять участие
+        index:
+          promoted_assemblies: Выдвинутые на первый план собрания
+        order_by_assemblies:
+          assemblies:
+            one: "%{count} собрание"
+            few: "%{count} собрания"
+            many: "%{count} собраний"
+            other: "%{count} собраний"
+        promoted_assembly:
+          more_info: Дополнительные сведения
+          take_part: Принять участие
+      assembly_header:
+        assembly_menu_item: Собрание
+        unfold: Развернуть
+      assembly_widgets:
+        show:
+          take_part: Принять участие

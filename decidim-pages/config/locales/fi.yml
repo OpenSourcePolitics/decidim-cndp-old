@@ -1,0 +1,22 @@
+fi:
+  decidim:
+    features:
+      pages:
+        name: Sivu
+        settings:
+          global:
+            announcement: Ilmoitus
+          step:
+            announcement: Ilmoitus
+    pages:
+      admin:
+        models:
+          components:
+            body: Runko
+        pages:
+          edit:
+            save: Päivitä
+            title: Muokkaa sivua
+          update:
+            invalid: Sivun tallennuksessa oli virheitä.
+            success: Sivu tallennettu onnistuneesti.

@@ -1,0 +1,177 @@
+fr:
+  activemodel:
+    attributes:
+      proposal:
+        body: Corps du texte
+        category_id: Catégorie
+        scope_id: Zone d'application
+        title: Titre
+        user_group_id: Créer une proposition en tant que
+      proposal_answer:
+        answer: Répondre
+  decidim:
+    features:
+      proposals:
+        actions:
+          create: Créer
+          vote: Voter
+        name: Propositions
+        settings:
+          global:
+            announcement: Annonce
+            attachments_allowed: Autoriser les pièces jointes
+            comments_enabled: Commentaires activés
+            geocoding_enabled: Géocodage activé
+            maximum_votes_per_proposal: Nombre maximum de votes par proposition
+            new_proposal_help_text: Nouveau texte d'aide à la proposition
+            official_proposals_enabled: Propositions officielles activées
+            proposal_answering_enabled: '"Réponses aux propositions" activé'
+            proposal_limit: Maximum de propositions par utilisateur
+            vote_limit: Nombre maximum de votes par utilisateur
+          step:
+            announcement: Annonce
+            comments_blocked: Commentaires bloqués
+            creation_enabled: Module propositions activé
+            proposal_answering_enabled: '"Réponses aux propositions" activé'
+            votes_blocked: Votes bloqués
+            votes_enabled: Votes activés
+            votes_hidden: Cacher les votes (si les votes sont activés, le compte des votes sera caché)
+    proposals:
+      actions:
+        answer: Répondre
+        new: Nouvelle
+        title: Actions
+      admin:
+        actions:
+          preview: Aperçu
+        exports:
+          comments: Commentaires
+          proposals: Propositions
+        models:
+          proposal:
+            name: Proposition
+        proposal_answers:
+          edit:
+            accepted: Retenue
+            answer_proposal: Répondre
+            evaluating: En cours d'évaluation
+            rejected: Refusée
+            title: Réponse à la proposition %{title}
+        proposals:
+          answer:
+            invalid: Il y a eu un problème concernant la réponse à cette proposition
+            success: La réponse à la proposition a publiée avec succès
+          create:
+            invalid: Il y a eu un problème lors de la création de cette proposition
+            success: Proposition créée avec succès
+          form:
+            attachment_legend: "(Facultatif) Ajouter une pièce jointe"
+            select_a_category: Sélectionner une catégorie
+          index:
+            title: Propositions
+          new:
+            create: Créer
+            title: Créer une proposition
+      answers:
+        accepted: Retenues
+        evaluating: En cours d'évaluation
+        not_answered: Resté sans réponse
+        rejected: Refusée
+      create:
+        error: Il y a eu des erreurs lors de la sauvegarde de la proposition.
+        success: Proposition créée avec succès.
+      models:
+        proposal:
+          fields:
+            category: Catégorie
+            id: ID
+            official_proposal: Proposition officielle
+            scope: Zone d'application
+            state: Etat
+            title: Titre
+            votes: Votes
+      new:
+        limit_reached: Vous ne pouvez pas créer de nouvelles propositions car vous avez dépassé le nombre autorisé.
+      proposal_votes:
+        create:
+          error: Des erreurs se sont produites lors du vote de la proposition.
+      proposals:
+        author:
+          deleted: Utilisateur supprimé
+          verified_user_group: Organisation vérifiée
+        count:
+          proposals_count:
+            one: 1 proposition
+            other: "%{count} propositions"
+        filters:
+          accepted: Retenues
+          activity: Activité
+          all: Toutes
+          category: Catégorie
+          category_prompt: Sélectionner une catégorie
+          citizens: Citoyens
+          evaluating: En cours d'évaluation
+          official: Elu-e-s
+          origin: Auteurs
+          rejected: Refusée
+          related_to: Liée à
+          scope_prompt: Sélectionnez un périmètre d'application
+          scopes: Zones d'application
+          search: Rechercher
+          state: État
+          voted: Votées
+        filters_small_view:
+          close_modal: Fermer la fenêtre de dialogue
+          filter: Filtrer
+          filter_by: Filtrer par
+          unfold: Déplier
+        index:
+          new_proposal: Nouvelle proposition
+          proposal_limit_reached: Nombre maximum de propositions atteint
+          view_proposal: Voir la proposition
+        linked_proposals:
+          proposal_votes:
+            one: <span class="card--list__data__number">1</span>vote
+            other: <span class="card--list__data__number">%{count}</span>votes
+        new:
+          attachment_legend: "(Facultatif) Ajouter une pièce jointe"
+          back: Retour
+          select_a_category: Veuillez sélectionner une catégorie
+          send: Publier
+          title: Nouvelle proposition
+        orders:
+          label: 'Classement des propositions par:'
+          most_voted: Les plus votées
+          random: Aléatoire
+          recent: Les plus récents
+        proposal:
+          view_proposal: Voir la proposition
+        show:
+          proposal_accepted_reason: 'Cette proposition a été retenue parce que :'
+          proposal_in_evaluation_reason: Cette proposition est en cours d'évaluation
+          proposal_rejected_reason: 'Cette proposition a été refusée parce que:'
+          report: Signaler
+        vote_button:
+          already_voted: Déjà voté
+          maximum_votes_reached: Nombre maximum de votes atteint
+          no_votes_remaining: Aucun vote restant
+          vote: Voter
+          votes_blocked: Votes désactivés
+        votes_count:
+          count:
+            one: VOTE
+            other: VOTES
+        voting_rules:
+          maximum_votes_per_proposal:
+            description: Chaque proposition peut recevoir un maximum de %{limit} votes.
+          proposal_limit:
+            description: Vous pouvez créer jusqu'à %{limit} propositions.
+          title: 'Le vote est soumis aux règles suivantes:'
+          vote_limit:
+            description: Vous pouvez voter pour %{limit} propositions au maximum.
+            left: Restant
+            votes: Votes
+    resource_links:
+      included_proposals:
+        proposal_projects: 'Proposition figurant dans ces projets :'
+        proposal_results: 'Proposition figurant dans ces résultats :'
