@@ -22,8 +22,8 @@ class EtiquetteValidator < ActiveModel::EachValidator
   end
 
   def validate_marks(record, attribute, value)
-    return if value.scan(/[!?¡¿]{2,}/).empty?
-    record.errors.add(attribute, options[:message] || :too_many_marks)
+    # return if value.scan(/[!?¡¿]{2,}/).empty?
+    # record.errors.add(attribute, options[:message] || :too_many_marks)
   end
 
   def validate_long_words(record, attribute, value)
