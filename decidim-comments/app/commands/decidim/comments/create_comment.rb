@@ -25,7 +25,6 @@ module Decidim
         transaction do
           create_comment
           send_notification_to_moderators
-          create_moderation
         end
 
         broadcast(:ok, @comment)
@@ -60,11 +59,6 @@ module Decidim
       def root_commentable(commentable)
         return commentable.root_commentable if commentable.is_a? Decidim::Comments::Comment
         commentable
-      end
-
-      def create_moderation
-        participatory_space = @comment.root_commentable.feature.participatory_space
-        @moderation = @comment.create_moderation!(participatory_space: participatory_space)
       end
     end
   end

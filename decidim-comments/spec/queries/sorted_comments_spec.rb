@@ -15,10 +15,6 @@ describe Decidim::Comments::SortedComments do
 
   # Unmoderate comment
   context "when the comment is unmoderate" do
-    before do
-      moderation = create(:moderation, reportable: comment, participatory_space: comment.feature.participatory_space, upstream_moderation: "unmoderate")
-    end
-
     it "is not included in the query" do
       expect(subject.query).to be_empty
     end
@@ -27,8 +23,7 @@ describe Decidim::Comments::SortedComments do
   # Refused comment
   context "when the comment is refused" do
     before do
-      moderation = create(:moderation, reportable: comment, participatory_space: comment.feature.participatory_space, upstream_moderation: "refused")
-
+      comment.moderation.update_attributes(upstream_moderation: "refused")
     end
 
     it "is not included in the query" do
@@ -38,22 +33,19 @@ describe Decidim::Comments::SortedComments do
 
   # Authorized comment
   context "when the comment is authorized" do
+    before do
+      comment.moderation.update_attributes(upstream_moderation: "authorized")
+    end
+
     context "when the comment is hidden" do
       before do
-        moderation = create(:moderation, reportable: comment, participatory_space: comment.feature.participatory_space, report_count: 1, hidden_at: Time.current, upstream_moderation: "authorized")
-        create(:report, moderation: moderation)
+        comment.moderation.update_attributes(report_count: 1, hidden_at: Time.current)
+        create(:report, moderation: comment.moderation)
       end
 
       it "is not included in the query" do
         expect(subject.query).to be_empty
       end
-    end
-  end
-
-  context "when the comment is authorized" do
-    before do
-      moderation = create(:moderation, reportable: comment, participatory_space: comment.feature.participatory_space, upstream_moderation: "authorized")
-
     end
 
     it "eager loads comment's author, up_votes and down_votes" do
@@ -68,12 +60,12 @@ describe Decidim::Comments::SortedComments do
     it "return the comments ordered by created_at asc by default" do
       previous_comment = create(:comment, commentable: commentable, author: author, created_at: 1.week.ago, updated_at: 1.week.ago)
 
-      previous_comment.create_moderation!(upstream_moderation: "authorized", participatory_space: previous_comment.feature.participatory_space)
+      previous_comment.moderation.update_attributes(upstream_moderation: "authorized")
 
 
       future_comment = create(:comment, commentable: commentable, author: author, created_at: 1.week.from_now, updated_at: 1.week.from_now)
 
-      future_comment.create_moderation!(upstream_moderation: "authorized", participatory_space: future_comment.feature.participatory_space)
+      future_comment.moderation.update_attributes(upstream_moderation: "authorized")
 
       expect(subject.query).to eq [previous_comment, comment, future_comment]
     end
@@ -85,11 +77,11 @@ describe Decidim::Comments::SortedComments do
         it "return the comments ordered by recent" do
           previous_comment = create(:comment, commentable: commentable, author: author, created_at: 1.week.ago, updated_at: 1.week.ago)
 
-          previous_comment.create_moderation!(upstream_moderation: "authorized", participatory_space: previous_comment.feature.participatory_space)
+          previous_comment.moderation.update_attributes(upstream_moderation: "authorized")
 
           future_comment = create(:comment, commentable: commentable, author: author, created_at: 1.week.from_now, updated_at: 1.week.from_now)
 
-          future_comment.create_moderation!(upstream_moderation: "authorized", participatory_space: future_comment.feature.participatory_space)
+          future_comment.moderation.update_attributes(upstream_moderation: "authorized")
 
           expect(subject.query).to eq [previous_comment, comment, future_comment].reverse
         end
@@ -101,11 +93,11 @@ describe Decidim::Comments::SortedComments do
         it "return the comments ordered by best_rated" do
           most_voted_comment = create(:comment, commentable: commentable, author: author, created_at: 1.week.ago, updated_at: 1.week.ago)
 
-          most_voted_comment.create_moderation!(upstream_moderation: "authorized", participatory_space: most_voted_comment.feature.participatory_space)
+          most_voted_comment.moderation.update_attributes(upstream_moderation: "authorized")
 
           less_voted_comment = create(:comment, commentable: commentable, author: author, created_at: 1.week.from_now, updated_at: 1.week.from_now)
 
-          less_voted_comment.create_moderation!(upstream_moderation: "authorized", participatory_space: less_voted_comment.feature.participatory_space)
+          less_voted_comment.moderation.update_attributes(upstream_moderation: "authorized")
 
           create(:comment_vote, comment: most_voted_comment, author: author, weight: 1)
           create(:comment_vote, comment: less_voted_comment, author: author, weight: -1)
@@ -119,11 +111,11 @@ describe Decidim::Comments::SortedComments do
         it "return the comments ordered by most_discussed" do
           most_commented = create(:comment, commentable: commentable, author: author, created_at: 1.week.ago, updated_at: 1.week.ago)
 
-          most_commented.create_moderation!(upstream_moderation: "authorized", participatory_space: most_commented.feature.participatory_space)
+          most_commented.moderation.update_attributes(upstream_moderation: "authorized")
 
           less_commented = create(:comment, commentable: commentable, author: author, created_at: 1.week.from_now, updated_at: 1.week.from_now)
 
-          less_commented.create_moderation!(upstream_moderation: "authorized", participatory_space: less_commented.feature.participatory_space)
+          less_commented.moderation.update_attributes(upstream_moderation: "authorized")
 
           create(:comment, commentable: comment)
           create_list(:comment, 3, commentable: most_commented)

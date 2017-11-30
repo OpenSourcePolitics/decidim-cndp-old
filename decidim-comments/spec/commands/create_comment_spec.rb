@@ -7,13 +7,13 @@ module Decidim
         let(:organization) { create(:organization) }
         let(:participatory_process) { create(:participatory_process, organization: organization) }
         let(:feature) { create(:feature, participatory_space: participatory_process) }
-        let(:admin) {create(:user, :admin, organization: organization)}
-        let(:user_manager) {create(:user, :user_manager, organization: organization)}
         let(:user) { create(:user, organization: organization) }
         let(:author) { create(:user, organization: organization) }
         let(:dummy_resource) { create :dummy_resource, feature: feature }
         let(:commentable) { dummy_resource }
         let!(:comment) { create(:comment, commentable: commentable, author: author) }
+        let(:admin) {create(:user, :admin, organization: organization)}
+        let(:user_manager) {create(:user, :user_manager, organization: organization)}
         let(:body) { ::Faker::Lorem.paragraph }
         let(:alignment) { 1 }
         let(:user_group_id) { nil }
@@ -81,15 +81,15 @@ module Decidim
             end.to change { Moderation.count }.by(1)
           end
 
-          it "sends a notification to the corresponding users except the comment's author" do
+          it "sends a notification to admins and moderators" do
             expect(commentable)
               .to receive(:users_to_notify_on_comment_created)
-              .and_return([admin])
+              .and_return([admin, user_manager])
 
-            expect_any_instance_of(Decidim::Comments::Comment) # rubocop:disable RSpec/AnyInstance
+            expect_any_instance_of(Decidim::Comments::Comment)
               .to receive(:id).at_least(:once).and_return 1
 
-            expect_any_instance_of(Decidim::Comments::Comment) # rubocop:disable RSpec/AnyInstance
+            expect_any_instance_of(Decidim::Comments::Comment)
               .to receive(:root_commentable).at_least(:once).and_return commentable
 
             expect(Decidim::EventsManager)
@@ -98,7 +98,7 @@ module Decidim
                 event: "decidim.events.comments.comment_created",
                 event_class: Decidim::Comments::CommentCreatedEvent,
                 resource: commentable,
-                recipient_ids: [admin.id],
+                recipient_ids: [admin.id, user_manager.id],
                 extra: {
                   comment_id: 1,
                   moderation_event: true

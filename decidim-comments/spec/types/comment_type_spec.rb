@@ -62,7 +62,7 @@ module Decidim
         let(:query) { "{ comments { id } }" }
         before do
           replies.each do |reply|
-            reply.create_moderation(upstream_moderation: "authorized", participatory_space: reply.feature.participatory_space)
+            reply.moderation.update_attributes(upstream_moderation: "authorized")
           end
         end
 

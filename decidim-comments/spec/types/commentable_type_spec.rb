@@ -38,7 +38,7 @@ module Decidim
       describe "comments" do
         before do
           model.comments.each do |comment|
-            comment.create_moderation(upstream_moderation: "authorized", participatory_space: comment.feature.participatory_space)
+            comment.moderation.update_attributes(upstream_moderation: "authorized")
           end
         end
 

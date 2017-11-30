@@ -45,11 +45,11 @@ module Decidim
         end
       end
 
-      describe "#users_to_notify_on_comment_created" do
+      describe "#users_to_notify_on_comment_authorized" do
         let!(:follows) { create_list(:follow, 3, followable: subject) }
 
         it "returns the followers" do
-          expect(subject.users_to_notify_on_comment_created).to match_array(follows.map(&:user))
+          expect(subject.users_to_notify_on_comment_authorized).to match_array(follows.map(&:user))
         end
       end
     end

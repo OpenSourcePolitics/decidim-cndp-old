@@ -98,7 +98,6 @@ module Decidim
         true
       end
 
-      # Public: Overrides the `public_comments_filters` Commentable concern method. Get all authorised comments, after downstream moderation
       # Public: Overrides the `reported_content_url` Reportable concern method.
       def reported_content_url
         ResourceLocatorPresenter.new(self).url
@@ -112,7 +111,6 @@ module Decidim
         process_users_with_role = get_user_with_process_role(participatory_process.id)
         users << admins + users_with_role + process_users_with_role
         return users.uniq if official?
-        binding.pry
         users.flatten
       end
 

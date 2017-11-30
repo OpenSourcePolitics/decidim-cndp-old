@@ -43,7 +43,6 @@ module Decidim
         # other users, eg. admins.
         # Returns: a relation of Decidim::User objects.
         def users_to_notify_on_comment_created
-          puts "USERS TO NOTIFY ON COMMENT CREATED"
           users = []
           participatory_process = feature.participatory_space
           admins = feature.organization.admins
@@ -60,10 +59,7 @@ module Decidim
 
         # Public: Override Commentable concern method `users_to_notify_on_comment_authorized`
         def users_to_notify_on_comment_authorized
-         puts "USERS TO NOTIFY ON COMMENT AUTHORIZED"
-
-          return (followers | feature.participatory_space.admins).uniq
-          followers
+          Decidim::User.none
         end
       end
     end
