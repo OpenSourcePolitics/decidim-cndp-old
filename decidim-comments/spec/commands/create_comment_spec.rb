@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require "spec_helper"
 
 module Decidim
@@ -9,11 +7,13 @@ module Decidim
         let(:organization) { create(:organization) }
         let(:participatory_process) { create(:participatory_process, organization: organization) }
         let(:feature) { create(:feature, participatory_space: participatory_process) }
+        let(:admin) {create(:user, :admin, organization: organization)}
+        let(:user_manager) {create(:user, :user_manager, organization: organization)}
         let(:user) { create(:user, organization: organization) }
         let(:author) { create(:user, organization: organization) }
         let(:dummy_resource) { create :dummy_resource, feature: feature }
         let(:commentable) { dummy_resource }
-        let(:proposal) { create(:proposal) }
+        let!(:comment) { create(:comment, commentable: commentable, author: author) }
         let(:body) { ::Faker::Lorem.paragraph }
         let(:alignment) { 1 }
         let(:user_group_id) { nil }
@@ -69,89 +69,43 @@ module Decidim
             end.to change { Comment.count }.by(1)
           end
 
-          describe "when commentable is a proposal" do
-            it "sends a notification to moderator and admin" do
-              admin = create(:user, organization: organization, admin: true)
-              moderator = create(:user, organization: organization, roles: ["user_manager"])
-              expect(proposal)
-                .to receive(:users_to_notify_on_comment_created)
-                .and_return([admin, moderator, author])
+          it "creates a new moderation" do
+            expect(Moderation).to receive(:create!).with(
+              reportable: comment,
+              participatory_space: comment.feature.participatory_space,
+              upstream_moderation: "unmoderate"
+            ).and_call_original
 
-              expect_any_instance_of(Decidim::Comments::Comment)
-                .to receive(:id).at_least(:once).and_return 1
-
-              expect_any_instance_of(Decidim::Comments::Comment)
-                .to receive(:root_commentable).at_least(:once).and_return proposal
-              expect(Decidim::EventsManager)
-                .to receive(:publish)
-                .with(
-                  event: "decidim.events.comments.comment_created",
-                  event_class: Decidim::Comments::CommentCreatedEvent,
-                  resource: proposal,
-                  recipient_ids: [admin.id, moderator.id],
-                  extra: {
-                    comment_id: 1
-                  }
-                )
-
+            expect do
               command.call
-            end
-
-            it "sends a notification to the corresponding users except the comment's author" do
-              follower = create(:user, organization: organization)
-
-              expect(proposal)
-                .to receive(:users_to_notify_on_comment_authorized)
-                .and_return([follower, author])
-
-              expect_any_instance_of(Decidim::Comments::Comment)
-                .to receive(:id).at_least(:once).and_return 1
-
-              expect_any_instance_of(Decidim::Comments::Comment)
-                .to receive(:root_commentable).at_least(:once).and_return proposal
-              expect(Decidim::EventsManager)
-                .to receive(:publish)
-                .with(
-                  event: "decidim.events.comments.comment_created",
-                  event_class: Decidim::Comments::CommentCreatedEvent,
-                  resource: proposal,
-                  recipient_ids: [follower.id],
-                  extra: {
-                    comment_id: 1
-                  }
-                )
-
-              command.call
-            end
+            end.to change { Moderation.count }.by(1)
           end
-          describe "when commentable is not a proposal" do
-            it "sends a notification to the corresponding users except the comment's author" do
-              follower = create(:user, organization: organization)
 
-              expect(commentable)
-                .to receive(:users_to_notify_on_comment_created)
-                .and_return([follower, author])
+          it "sends a notification to the corresponding users except the comment's author" do
+            expect(commentable)
+              .to receive(:users_to_notify_on_comment_created)
+              .and_return([admin])
 
-              expect_any_instance_of(Decidim::Comments::Comment)
-                .to receive(:id).at_least(:once).and_return 1
+            expect_any_instance_of(Decidim::Comments::Comment) # rubocop:disable RSpec/AnyInstance
+              .to receive(:id).at_least(:once).and_return 1
 
-              expect_any_instance_of(Decidim::Comments::Comment)
-                .to receive(:root_commentable).at_least(:once).and_return commentable
+            expect_any_instance_of(Decidim::Comments::Comment) # rubocop:disable RSpec/AnyInstance
+              .to receive(:root_commentable).at_least(:once).and_return commentable
 
-              expect(Decidim::EventsManager)
-                .to receive(:publish)
-                .with(
-                  event: "decidim.events.comments.comment_created",
-                  event_class: Decidim::Comments::CommentCreatedEvent,
-                  resource: commentable,
-                  recipient_ids: [follower.id],
-                  extra: {
-                    comment_id: 1
-                  }
-                )
+            expect(Decidim::EventsManager)
+              .to receive(:publish)
+              .with(
+                event: "decidim.events.comments.comment_created",
+                event_class: Decidim::Comments::CommentCreatedEvent,
+                resource: commentable,
+                recipient_ids: [admin.id],
+                extra: {
+                  comment_id: 1,
+                  moderation_event: true
+                }
+              )
 
-              command.call
-            end
+            command.call
           end
         end
       end

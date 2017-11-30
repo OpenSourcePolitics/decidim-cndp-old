@@ -16,6 +16,9 @@ pl:
             email_outro: Otrzymujesz to powiadomienie, ponieważ śledzisz "%{resource_title}". Możesz cofnąć ją od poprzedniego linku.
             email_subject: Nowa odpowiedź Twojego komentarza z %{author_name} w <a href="%{resource_url}">%{resource_title}</a>
             notification_title: Nowa odpowiedź Twojego komentarza z %{author_name} w <a href="%{resource_path}">%{resource_title}</a>
+            moderation:
+              email_intro: 'A new comment have been posted, you can moderate it in this page:'
+              email_subject: 'New comment from %{author_name} waiting for moderation'
       votes:
         create:
           error: Podczas głosowania komentarza wystąpiły błędy.

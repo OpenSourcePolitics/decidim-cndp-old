@@ -45,7 +45,6 @@ module Decidim
       end
 
       def send_notification_to_moderators
-        puts "SEND NOTIF TO MODERATOR"
         Decidim::EventsManager.publish(
           event: "decidim.events.comments.comment_created",
           event_class: Decidim::Comments::CommentCreatedEvent,
@@ -64,8 +63,8 @@ module Decidim
       end
 
       def create_moderation
-        participatory_space_id = @comment.root_commentable.feature.participatory_space_id
-        Decidim::Moderation.create(decidim_participatory_space_id: participatory_space_id, decidim_reportable_type: @comment.class.name, decidim_reportable_id: @comment.id, decidim_participatory_space_type: "Decidim::ParticipatoryProcess")
+        participatory_space = @comment.root_commentable.feature.participatory_space
+        @moderation = @comment.create_moderation!(participatory_space: participatory_space)
       end
     end
   end

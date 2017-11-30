@@ -60,6 +60,12 @@ module Decidim
         let!(:replies) { Array.new(3) { |n| FactoryGirl.create(:comment, commentable: model, created_at: Time.current - n.days) } }
 
         let(:query) { "{ comments { id } }" }
+        before do
+          replies.each do |reply|
+            reply.create_moderation(upstream_moderation: "authorized", participatory_space: reply.feature.participatory_space)
+          end
+        end
+
 
         it "return comment's comments comments data" do
           replies.each do |reply|

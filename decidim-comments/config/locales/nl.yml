@@ -16,6 +16,9 @@ nl:
             email_outro: U heeft deze melding ontvangen omdat u "%{resource_title}" volgt. U kunt het niet volgen vanaf de vorige link.
             email_subject: Er is een nieuw antwoord van uw reactie van %{author_name} in <a href="%{resource_url}">%{resource_title}</a>
             notification_title: Er is een nieuw antwoord van uw reactie van %{author_name} in <a href="%{resource_path}">%{resource_title}</a>
+            moderation:
+              email_intro: 'A new comment have been posted, you can moderate it in this page:'
+              email_subject: 'New comment from %{author_name} waiting for moderation'
       votes:
         create:
           error: Er zijn fouten geweest bij het stemmen van de reactie.

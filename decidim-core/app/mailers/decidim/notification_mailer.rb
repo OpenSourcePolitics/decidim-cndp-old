@@ -13,9 +13,9 @@ module Decidim
         @organization = resource.organization
         event_class = event_class_name.constantize
         @event_instance = event_class.new(resource: resource, event_name: event, user: user, extra: extra)
-        subject = moderation ? @event_instance.email_subject : @event_instance.email_moderation_subject
+        subject = moderation ? @event_instance.email_moderation_subject : @event_instance.email_subject
         @participatory_process = resource.feature.participatory_space if moderation
-
+binding.pry
         mail(to: user.email, subject: subject, :template_name => template)
       end
     end

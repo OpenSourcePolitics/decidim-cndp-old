@@ -36,6 +36,12 @@ module Decidim
       end
 
       describe "comments" do
+        before do
+          model.comments.each do |comment|
+            comment.create_moderation(upstream_moderation: "authorized", participatory_space: comment.feature.participatory_space)
+          end
+        end
+
         let(:query) { "{ comments { id } }" }
 
         it "returns the commentable comments" do
