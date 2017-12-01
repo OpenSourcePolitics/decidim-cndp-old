@@ -26,6 +26,7 @@ module Decidim
       scope :accepted, -> { where(state: "accepted") }
       scope :rejected, -> { where(state: "rejected") }
       scope :evaluating, -> { where(state: "evaluating") }
+      after_create :create_moderation
 
       def self.order_randomly(seed)
         transaction do
@@ -103,20 +104,28 @@ module Decidim
         ResourceLocatorPresenter.new(self).url
       end
 
+      def users_to_notify_on_proposal_created
+        get_all_users_with_role
+      end
+
+
       def users_to_notify_on_comment_created
-        users = []
-        participatory_process = feature.participatory_space
-        admins = feature.organization.admins
-        users_with_role = feature.organization.users_with_any_role
-        process_users_with_role = get_user_with_process_role(participatory_process.id)
-        users << admins + users_with_role + process_users_with_role
-        return users.uniq if official?
-        users
+        get_all_users_with_role
       end
 
       def users_to_notify_on_comment_authorized
         return (followers | feature.participatory_space.admins).uniq if official?
         followers
+      end
+
+      def get_all_users_with_role
+        participatory_process = feature.participatory_space
+        admins = feature.organization.admins
+        users_with_role = feature.organization.users_with_any_role
+        process_users_with_role = get_user_with_process_role(participatory_process.id)
+        users = admins + users_with_role + process_users_with_role
+        return users.uniq if official?
+        users
       end
 
       # Public: Whether the proposal is official or not.
@@ -141,6 +150,13 @@ module Decidim
         return false unless maximum_votes
 
         votes.count >= maximum_votes
+      end
+
+      private
+
+      def create_moderation
+        participatory_space = self.feature.participatory_space
+        self.create_moderation!(participatory_space: participatory_space)
       end
     end
   end

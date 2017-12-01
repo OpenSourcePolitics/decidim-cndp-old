@@ -1,35 +1,11 @@
 # frozen-string_literal: true
 
 module Decidim
-  module Comments
-    class CommentCreatedEvent < Decidim::Events::BaseEvent
+  module Proposals
+    class ProposalCreatedEvent < Decidim::Events::BaseEvent
       include Decidim::Events::EmailEvent
       include Decidim::Events::NotificationEvent
 
-      def email_subject
-        I18n.t(
-          "decidim.comments.events.comment_created.#{comment_type}.email_subject",
-          resource_title: resource_title,
-          resource_url: resource_locator.url(url_params),
-          author_name: comment.author.name
-        )
-      end
-
-      def email_intro
-        I18n.t(
-          "decidim.comments.events.comment_created.#{comment_type}.email_intro",
-          resource_title: resource_title
-        ).html_safe
-      end
-
-      def email_outro
-        I18n.t(
-          "decidim.comments.events.comment_created.#{comment_type}.email_outro",
-          resource_title: resource_title
-        )
-      end
-
-      # TODO change notifications text
       def notification_title
         I18n.t(
           "decidim.comments.events.comment_created.#{comment_type}.notification_title",
@@ -57,16 +33,12 @@ module Decidim
 
       private
 
-      def comment
-        @comment ||= Decidim::Comments::Comment.find(extra[:comment_id])
-      end
-
-      def comment_type
-        comment.depth.zero? ? :comment : :reply
+      def proposal
+        @proposal ||= Decidim::Proposals::Proposal.find(proposal)
       end
 
       def url_params
-        comment_type == :comment ? {} : { anchor: "comment_#{comment.id}" }
+        proposal_type == :proposal ? {} : { anchor: "proposal_#{proposal.id}" }
       end
     end
   end
