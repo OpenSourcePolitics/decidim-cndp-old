@@ -70,6 +70,10 @@ module Decidim
             end.to change { Comment.count }.by(1)
           end
 
+          it "creates a new moderation" do
+            expect(comment.moderation).to eq(Moderation.last)
+          end
+
           it "sends a notification to admins and moderators" do
             expect(commentable)
               .to receive(:users_to_notify_on_comment_created)

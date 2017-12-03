@@ -26,7 +26,7 @@ module Decidim
       scope :accepted, -> { where(state: "accepted") }
       scope :rejected, -> { where(state: "rejected") }
       scope :evaluating, -> { where(state: "evaluating") }
-      after_create :create_moderation
+      after_create :create_proposal_moderation
 
       def self.order_randomly(seed)
         transaction do
@@ -154,7 +154,7 @@ module Decidim
 
       private
 
-      def create_moderation
+      def create_proposal_moderation
         participatory_space = self.feature.participatory_space
         self.create_moderation!(participatory_space: participatory_space)
       end
