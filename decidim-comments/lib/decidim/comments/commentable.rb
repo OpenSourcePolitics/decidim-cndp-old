@@ -59,21 +59,8 @@ module Decidim
           Decidim::ParticipatoryProcessUserRole.where(decidim_participatory_process_id: participatory_process_id).map(&:user)
         end
 
-        # Public: Override Commentable concern method `users_to_notify_on_comment_authorized`
         def users_to_notify_on_comment_authorized
           Decidim::User.none
-        end
-
-        def send_notification(event, event_class, resource, extra)
-          Decidim::EventsManager.publish(
-            event: "decidim.events.comments.comment_created",
-            event_class: Decidim::Comments::CommentCreatedEvent,
-            resource: self.root_commentable,
-            recipient_ids: (self.root_commentable.users_to_notify_on_comment_authorized - [author]).pluck(:id),
-            extra: {
-              comment_id: self.id
-            }
-          )
         end
       end
     end
