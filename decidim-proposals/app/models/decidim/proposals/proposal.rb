@@ -140,10 +140,6 @@ module Decidim
         votes.count >= maximum_votes
       end
 
-      def upstream_moderation_activated?
-        feature.settings.upstream_moderation_enabled
-      end
-
       private
 
       def create_proposal_moderation
@@ -152,7 +148,7 @@ module Decidim
       end
 
       def update_moderation
-        unless moderation.upstream_moderation_activated?
+        unless moderation.upstream_activated?
           moderation.authorize!
         end
       end
