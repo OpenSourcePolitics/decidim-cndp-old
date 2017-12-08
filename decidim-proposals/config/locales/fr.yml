@@ -34,7 +34,8 @@ fr:
             proposal_answering_enabled: '"Réponses aux propositions" activé'
             proposal_limit: Maximum de propositions par utilisateur
             vote_limit: Nombre maximum de votes par utilisateur
-            upstream_moderation: Modération à priori activée
+            upstream_moderation_enabled: Modération à priori des propositions activée
+            comments_upstream_moderation_enabled: Modération à priori des commentaires activée
           step:
             announcement: Annonce
             comments_blocked: Commentaires bloqués

@@ -141,7 +141,7 @@ module Decidim
       end
 
       def upstream_moderation_activated?
-        feature.settings.upstream_moderation
+        feature.settings.upstream_moderation_enabled
       end
 
       private
