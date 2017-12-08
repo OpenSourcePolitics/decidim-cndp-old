@@ -27,6 +27,7 @@ module Decidim
       scope :rejected, -> { where(state: "rejected") }
       scope :evaluating, -> { where(state: "evaluating") }
       after_create :create_proposal_moderation
+      after_create :update_moderation
 
       def self.order_randomly(seed)
         transaction do
@@ -139,12 +140,19 @@ module Decidim
         votes.count >= maximum_votes
       end
 
+      def upstream_moderation_activated?
+        feature.settings.upstream_moderation
+      end
+
       private
 
       def create_proposal_moderation
         participatory_space = self.feature.participatory_space
         self.create_moderation!(participatory_space: participatory_space)
-        unless feature.settings.upstream_moderation
+      end
+
+      def update_moderation
+        unless upstream_moderation_activated?
           moderation.authorize!
         end
       end
