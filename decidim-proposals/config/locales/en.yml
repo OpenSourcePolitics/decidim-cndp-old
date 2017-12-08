@@ -35,6 +35,7 @@ en:
             proposal_answering_enabled: Proposal answering enabled
             proposal_limit: Proposal limit per user
             vote_limit: Vote limit per user
+            upstream_moderation: Upstream moderation enabled
           step:
             announcement: Announcement
             comments_blocked: Comments blocked
