@@ -1,0 +1,4 @@
+# Ignore Node files
+node_modules/*
+yarn.lock
+webpack.report.html
