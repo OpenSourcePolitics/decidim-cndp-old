@@ -9,14 +9,51 @@
         <span aria-hidden="true">&times;</span>
       </button>
       <!-- Menu -->
+
       <div class="hide-for-medium" data-set="nav-holder"></div>
       <div class="hide-for-medium usermenu-off-canvas-holder"
-           data-set="nav-login-holder"></div>
+           data-set="nav-login-holder">
+        <nav class="main-nav">
+         <ul>
+          <p class="category-title"> Editorial des Co-Présidents</p>
+            <li>
+              <a href="https://dialogue-trianon.fr/editorial/editorial-des-co-presidents">Editorial des Co-Présidents</a>
+            </li>
+            <li>
+              <a href= "https://dialogue-trianon.fr/editorial/la-ville-du-futur">Messages des secrétaires généraux</a>
+            </li>
+          </ul>
+          <ul>
+            <p class="category-title">Les coopérations Franco-Russes</p>
+            <li>
+              <a href= "https://dialogue-trianon.fr/les-cooperations-franco-russes/inscrivez-une-cooperation">Inscrivez une coopération</a>
+            </li>
+            <li>
+              <a href= "https://dialogue-trianon.fr/les-cooperations-franco-russes/consultez-les-cooperations-existantes">Consultez les coopérations existantes</a>
+            </li>
+          </ul>
+          <ul>
+            <p class="category-title">Les rencontres autour de "la ville du futur"</p>
+            <p class="sub-category">Institutionnel :</p>
+            <li>
+              <a href= "https://dialogue-trianon.fr/les-rencontres-autour-de-la-ville-du-futur/proposez-un-dialogue">Proposez une rencontre</a>
+            </li>
+            <p class="sub-category">Citoyen :</p>
+            <li>
+              <a href= "https://dialogue-trianon.fr/les-rencontres-autour-de-la-ville-du-futur/inscrivez-vous-aux-rencontres">Inscrivez-vous aux rencontres</a>
+            </li>
+          </ul>
+          </nav>
+        </div>
+      </nav>
     </div>
+    </div>
+
     <div class="off-canvas-content" data-off-canvas-content>
       <div class="footer-separator">
         <!--separates the footer from the rest of the page,
              creates a sticky footer-->
+      <div class="bg-white">
         <!-- Topbar -->
         <div class="title-bar">
           <% if current_organization.official_img_header? %>
@@ -70,13 +107,37 @@
         <div class="show-for-medium" data-set="nav-holder">
           <nav class="navbar js-append">
             <div class="row column">
-              <%= main_menu.render %>
+            <!-- Menu desktop -->
+              <nav class="main-nav d-none d-xl-block">
+               <div class="dropdown">
+                  <span class="nav-link">Editorial des Co-Présidents <%= image_tag "arrow-menu.png", class: "arrow", width: 10%></span>
+                  <div class="dropdown-content">
+                    <a href= "https://dialogue-trianon.fr/editorial/editorial-des-co-presidents">Editorial des Co-Présidents</a>
+                    <a href= "https://dialogue-trianon.fr/editorial/la-ville-du-futur">Messages des secrétaires généraux</a>
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <span class="nav-link">Les coopérations Franco-Russes <%= image_tag "arrow-menu.png", class: "arrow", width: 10%></span>
+                  <div class="dropdown-content">
+                    <a href= "https://dialogue-trianon.fr/les-cooperations-franco-russes/inscrivez-une-cooperation">Inscrivez une coopération</a>
+                    <a href= "https://dialogue-trianon.fr/les-cooperations-franco-russes/consultez-les-cooperations-existantes">Consultez les coopérations existantes</a>
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <span class="nav-link">Les rencontres autour de "la ville du futur" <%= image_tag "arrow-menu.png", class: "arrow", width: 10%></span>
+
+                  <div class="dropdown-content">
+                    <span>Institutionnel</span>
+                    <a href= "https://dialogue-trianon.fr/les-rencontres-autour-de-la-ville-du-futur/proposez-un-dialogue">Proposez une rencontre</a>
+                    <span>Citoyen</span>
+                    <a href= "https://dialogue-trianon.fr/les-rencontres-autour-de-la-ville-du-futur/inscrivez-vous-aux-rencontres">Inscrivez-vous aux rencontres</a>
+                  </div>
+                </div>
+              </nav>
             </div>
           </nav>
         </div>
-        <div class="subtitle-section ">
-          <h2 class="subtitle">Comment envisagez-vous la ville du futur ?</h2>
-        </div>
+      </div>
         <main>
           <%= display_flash_messages %>
           <%= yield %>
