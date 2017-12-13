@@ -1,0 +1,64 @@
+.logo-container{
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.logo-amarante{
+  max-width: 90%;
+}
+
+.navbar-custom{
+  height: 40px;
+}
+
+.custom-link{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #FAFAFA;
+  height: 40px;
+  line-height: 38px;
+  a{
+    color: black!important;
+    padding-bottom: 5px ;
+    padding-top: 5px ;
+  }
+  &:hover{
+    background-color: #F4F4F4;
+  }
+}
+
+.subtitle-section{
+  background-color: #F2F2F2;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.subtitle{
+  font-weight: 600;
+  color: black;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
