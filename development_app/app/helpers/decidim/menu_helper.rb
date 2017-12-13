@@ -8,7 +8,7 @@ module Decidim
       @main_menu ||= ::Decidim::MenuPresenter.new(
         :menu,
         self,
-        element_class: "custom-link dropdown",
+        element_class: "main-nav__link dropdown",
         active_class: "",
         dropdown_class: "dropdown_content"
       )

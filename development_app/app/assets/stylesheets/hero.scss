@@ -1,3 +1,9 @@
+/* Variables */
+$light-gray: #fafafa;
+$light-gray-1: #F4F4F4;
+$gray: #F2F2F2;
+
+
 .logo-container{
   text-align: center;
   margin-bottom: 20px;
@@ -8,30 +14,29 @@
   max-width: 90%;
 }
 
-.navbar-custom{
-  height: 40px;
-}
-
-.custom-link{
+.main-nav__link a{
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
-  background-color: #FAFAFA;
-  height: 40px;
-  line-height: 38px;
-  a{
-    color: black!important;
-    padding-bottom: 5px ;
-    padding-top: 5px ;
-  }
+  background-color: $light-gray;
+  color: black!important;
   &:hover{
-    background-color: #F4F4F4;
+    background-color: $light-gray-1;
+  }
+}
+.navbar{
+  background-color: $light-gray;
+}
+.off-canvas{
+  background-color: $light-gray;
+  a {
+    color: black!important;
   }
 }
 
 .subtitle-section{
-  background-color: #F2F2F2;
+  background-color: $gray;
   height: 90px;
   display: flex;
   justify-content: center;
