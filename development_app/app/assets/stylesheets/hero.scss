@@ -118,31 +118,37 @@ $white: white;
   display: block!important;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+/*Dropdown arrow*/
+.main-nav{
+  .dropdown:hover .dropdown-content {
+      display: block;
+  }
+  .is-dropdown-submenu-parent > div::after {
+      display: block;
+      width: 0;
+      height: 0;
+      border: inset 6px;
+      content: '';
+      border-bottom-width: 0;
+      border-top-style: solid;
+      border-color: $black transparent transparent;
+      right: 5px;
+      margin-top: -3px;
+  }
+  .dropdown:after {
+      margin-top: -1px !important;
+      border-top-color: $black !important;
+  }
+  .is-dropdown-submenu-parent div::after {
+      position: absolute;
+      top: 50%;
+      right: 0px;
+      margin-top: -4px;
+  }
 }
-.is-dropdown-submenu-parent > span::after {
-    display: block;
-    width: 0;
-    height: 0;
-    border: inset 6px;
-    content: '';
-    border-bottom-width: 0;
-    border-top-style: solid;
-    border-color: $black transparent transparent;
-    right: 5px;
-    margin-top: -3px;
-}
-.dropdown:after {
-    margin-top: -1px !important;
-    border-top-color: $black !important;
-}
-.is-dropdown-submenu-parent span::after {
-    position: absolute;
-    top: 50%;
-    right: 0px;
-    margin-top: -4px;
-}
+
+/*Phone*/
+
 @media screen and (max-width: 767px){
   .topbar__menu button {
     color: black;
@@ -172,6 +178,8 @@ $white: white;
     color: $black;
   }
 }
+
+/*Tablet*/
 
 @media (min-width: 769px) and (max-width: 1024px) {
      .main-nav { height: 60px;}
