@@ -9,6 +9,7 @@ module Decidim
 
       def index
         authorize! :read, Decidim::Moderation
+        @moderated = true if params[:moderated]
         @upstream =  true if params[:moderation_type] == "upstream"
         @downstream = true if params[:moderation_type] == "downstream"
       end
@@ -16,16 +17,18 @@ module Decidim
       def authorize
         authorize! :authorize, Decidim::Moderation
         @moderation = Decidim::Moderation.find(params[:id])
+        moderated = params[:moderated]
         @moderation.authorize!
-        redirect_to moderations_path(moderation_type: "upstream")
+        redirect_to moderations_path(moderation_type: "upstream", moderated: moderated)
       end
 
       # This action is use to hide or to set as refused moderated object
       def hide
         authorize! :hide, reportable
         if params[:refuse]
+          moderated = params[:moderated]
           reportable.moderation.refuse!
-          redirect_to moderations_path(moderation_type: "upstream")
+          redirect_to moderations_path(moderation_type: "upstream", moderated: moderated)
         else
           Admin::HideResource.call(reportable) do
             on(:ok) do
