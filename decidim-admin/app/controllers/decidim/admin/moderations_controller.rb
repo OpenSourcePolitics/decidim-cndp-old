@@ -9,7 +9,7 @@ module Decidim
 
       def index
         authorize! :read, Decidim::Moderation
-        @moderated = true if params[:moderated]
+        @moderated_or_hidden = true if params[:moderated] || params[:hidden]
         @upstream =  true if params[:moderation_type] == "upstream"
         @downstream = true if params[:moderation_type] == "downstream"
       end
