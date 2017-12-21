@@ -70,7 +70,7 @@ module Decidim
           extra: {
             moderation_event: @proposal.moderation.upstream_activated? ? true : false,
             new_content: true,
-            process_slug: @proposal.feature.participatory_space.slug,
+            process_slug: @proposal.feature.participatory_space.slug
           }
         )
       end

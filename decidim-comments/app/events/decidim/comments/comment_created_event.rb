@@ -29,6 +29,20 @@ module Decidim
         )
       end
 
+      def email_url
+        I18n.t(
+          "decidim.comments.events.comment_created.#{comment_type}.url",
+          resource_url: resource_locator.url(url_params)
+        ).html_safe
+      end
+
+      def email_subject
+        I18n.t(
+          "decidim.comments.events.comment_created.#{comment_type}.email_subject",
+          author_name: comment.author.name
+        ).html_safe
+      end
+
       def notification_title
         I18n.t(
           "decidim.comments.events.comment_created.#{comment_type}.notification_title",
@@ -52,6 +66,13 @@ module Decidim
           resource_title: resource_title,
           resource_url: resource_locator.url(url_params),
           author_name: comment.author.name
+        ).html_safe
+      end
+
+      def email_moderation_url(moderation_url)
+        I18n.t(
+          "decidim.comments.events.comment_created.#{comment_type}.moderation.moderation_url",
+          moderation_url: moderation_url
         ).html_safe
       end
 
