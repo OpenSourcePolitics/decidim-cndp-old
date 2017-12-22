@@ -1,6 +1,6 @@
 GIT
-  remote: git@github.com:OpenSourcePolitics/decidim-user-export.git
-  revision: bc852173bcd6876dcefa81df25b5930b3ffef445
+  remote: https://github.com/OpenSourcePolitics/decidim-user-export.git
+  revision: aa23740c1e5b1b90df2ba0b2e6f7e3593e7806b4
   specs:
     decidim-export (0.0.1)
       decidim-core
