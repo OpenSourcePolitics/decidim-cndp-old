@@ -3,7 +3,7 @@
 
 Decidim.configure do |config|
   config.application_name = "OSP Agora"
-  config.mailer_sender = Rails.application.secrets.smtp_username
+  config.mailer_sender = "ne-pas-repondre@opensourcepolitics.eu"
   config.authorization_handlers = ["Decidim::DummyAuthorizationHandler"]
 
   # Change these lines to set your preferred locales
