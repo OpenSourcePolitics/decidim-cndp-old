@@ -2,13 +2,13 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
-  config.application_name = "My Application Name"
-  config.mailer_sender = "mako@osp.cat"
+  config.application_name = "OSP Agora"
+  config.mailer_sender = Rails.application.secrets.smtp_username
   config.authorization_handlers = ["Decidim::DummyAuthorizationHandler"]
 
   # Change these lines to set your preferred locales
   config.default_locale = :en
-  config.available_locales = [:en, :ca, :es, :fr]
+  config.available_locales = [:en, :fr]
 
   # Geocoder configuration
   # config.geocoder = {
