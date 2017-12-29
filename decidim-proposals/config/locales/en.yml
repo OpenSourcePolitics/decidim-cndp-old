@@ -11,6 +11,15 @@ en:
       proposal_answer:
         answer: Answer
   decidim:
+    events:
+      proposal_created:
+        notification_title: There is a new proposal from %{author_name} in <a href="%{resource_path}">%{resource_title}</a>
+        url: "Comment's url : %{resource_url}"
+        email_subject: 'New proposal from %{author_name}'
+        moderation:
+          email_subject: 'New proposal from %{author_name} waiting for moderation'
+          email_intro: '%{author_name} published a new proposal in'
+          moderation_url: "You can moderate it here : %{moderation_url}"
     features:
       proposals:
         actions:
@@ -29,6 +38,8 @@ en:
             proposal_answering_enabled: Proposal answering enabled
             proposal_limit: Proposal limit per user
             vote_limit: Vote limit per user
+            upstream_moderation_enabled: Upstream moderation for proposals enabled
+            comments_upstream_moderation_enabled: Upstream moderation for comments enabled
           step:
             announcement: Announcement
             comments_blocked: Comments blocked
@@ -64,7 +75,7 @@ en:
             success: Proposal successfully answered
           create:
             invalid: There's been a problem creating this proposal
-            success: Proposal successfully created
+            success: Proposal successfully created.
           form:
             attachment_legend: "(Optional) Add an attachment"
             select_a_category: Select a category
@@ -80,7 +91,7 @@ en:
         rejected: Rejected
       create:
         error: There's been errors when saving the proposal.
-        success: Proposal created successfully.
+        success: Proposal successfully created. It will be published as soon as an administrator will have authorized it.
       models:
         proposal:
           fields:

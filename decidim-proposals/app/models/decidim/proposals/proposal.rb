@@ -26,6 +26,8 @@ module Decidim
       scope :accepted, -> { where(state: "accepted") }
       scope :rejected, -> { where(state: "rejected") }
       scope :evaluating, -> { where(state: "evaluating") }
+      after_create :create_proposal_moderation
+      after_create :update_moderation
 
       def self.order_randomly(seed)
         transaction do
@@ -98,15 +100,20 @@ module Decidim
         true
       end
 
-      # Public: Override Commentable concern method `users_to_notify_on_comment_created`
-      def users_to_notify_on_comment_created
-        return (followers | feature.participatory_space.admins).uniq if official?
-        followers
-      end
-
       # Public: Overrides the `reported_content_url` Reportable concern method.
       def reported_content_url
         ResourceLocatorPresenter.new(self).url
+      end
+
+      def users_to_notify_on_proposal_created
+        get_all_users_with_role
+      end
+
+
+      # Public: Override Commentable concern method `users_to_notify_on_comment_authorized`
+      def users_to_notify_on_comment_authorized
+        return (followers | feature.participatory_space.admins).uniq if official?
+        followers
       end
 
       # Public: Whether the proposal is official or not.
@@ -131,6 +138,19 @@ module Decidim
         return false unless maximum_votes
 
         votes.count >= maximum_votes
+      end
+
+      private
+
+      def create_proposal_moderation
+        participatory_space = self.feature.participatory_space
+        self.create_moderation!(participatory_space: participatory_space)
+      end
+
+      def update_moderation
+        unless moderation.upstream_activated?
+          moderation.authorize!
+        end
       end
     end
   end

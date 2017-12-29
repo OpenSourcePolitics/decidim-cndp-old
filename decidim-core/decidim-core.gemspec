@@ -50,7 +50,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rubyzip", "1.2.1"
   s.add_dependency "select2-rails", "~> 4.0.3"
   s.add_dependency "spreadsheet", "~> 1.1"
-
+  s.add_development_dependency "pry-byebug"
   s.add_dependency "decidim-api", Decidim::Core.version
 
   s.add_development_dependency "decidim-dev", Decidim::Core.version
